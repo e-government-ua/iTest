@@ -62,7 +62,7 @@ public class MainPage extends ApplicationManager {
     //---------------- Выбор сервиса по региону  ------------------//
 
 
-    @FindBy(css = "p.ng-scope > a.ng-binding")
+    @FindBy(css = ".ng-scope>p")
     public WebElement services ;         // название сервисов на главной странице
 
 
@@ -109,6 +109,11 @@ public class MainPage extends ApplicationManager {
     //    ------------------- Метод перехода в меню про портал  ------------------------------//
     public void goToAboutPortal(){
 	aboutPortalLink.click();
+    }
+
+    //    ------------------- Метод перехода в меню про портал  ------------------------------//
+    public void goToTestServices(String server, String service) {
+        driver.get(server+service);
     }
 
 	public void goToService() {

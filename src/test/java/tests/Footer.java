@@ -4,7 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import driverLogic.TestBase;
 
-public class FooterTest extends TestBase {
+public class Footer extends TestBase {
 
 
 	@Test

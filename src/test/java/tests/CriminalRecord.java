@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import appLogic.Constants;
 import driverLogic.TestBase;
 
-public class CriminalRecordTest extends TestBase  {
+public class CriminalRecord extends TestBase  {
 	
 	
 	
@@ -17,9 +17,9 @@ public class CriminalRecordTest extends TestBase  {
         String service = Constants.Settings.ServiceMVD.CriminalRecord;
         String region = Constants.Settings.Region.Dnipropetrovska;
         String city = Constants.Settings.City.Dnipropetrovsk;
-        //String birthDate = "12.11.1990";
+        String birthDate = Constants.Settings.Data.BirthDay;
         String birthLoc = "Украина";
-        String сountry = "Україна";
+        String country = "Україна";
         String goal = "Оформлення візи для виїзду за кордон.";
         String phone = "931234567";
         String resType = "Прошу надати довідку в паперовому вигляді";
@@ -35,9 +35,9 @@ public class CriminalRecordTest extends TestBase  {
         authorizationPage.privatBankAuthorization();
         Assert.assertEquals(criminalRecordPage.serviceName.getText(), service);
 		
-		criminalRecordPage.typeInBirthDateField("12.11.1990")
+		criminalRecordPage.typeInBirthDateField(birthDate)
                           .typeInBirthLocField(birthLoc)
-                          .selectСountry(сountry)
+                          .selectСountry(country)
                           .selectGoal(goal)
                           .typeInPhoneField(phone)
                           .selectResType(resType)

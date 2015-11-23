@@ -56,7 +56,7 @@ public class Constants {
             public static final String FIO_UA = "Дмитро Олександрович Дубілет";
             public static final String FIO_RUS = "Дубилет Дмитрий Александрович";
             public static final String E_MAIL = "vidokgulich@gmail.com";
-            public static final String BirthDay = "01.01.1960";
+            public static final String BirthDay = "01.01.1970";
             public static final String BirthLocal = "Україна,Дніпропетровська,Дніпропетровськ";
             public static final String Resident = "Українське";
         }
@@ -69,8 +69,19 @@ public class Constants {
             public static final String OTP2 = "34";   // Одноразовый пароль
             public static final String OTP3 = "56";   // Одноразовый пароль
         }
-    }
 
+
+    }
+    //    ------------------- УРЛ для работы с тестовыми услугами  -----------------//
+    public static class TestService {
+        public static final String TEST_DEPENDENCE_FORM  = "/service/671/general";
+        public static final String TEST_FIELDS_BANKID = "/service/720/general";
+        public static final String TEST_LIQPAY = "/service/674/general";
+        public static final String TEST_MAILER = "/service/755/general";
+        public static final String TEST_PRINT_FORM = "/service/673/general";
+        public static final String TEST_QUEUE_CANCEL = "/service/756/general";
+        public static final String TEST_ZP_CNAP_MAILER = "/service/1426/general";
+    }
     //    ------------------- Сервера для запуска тестов  ------------------------------//
     public static class Server {
         public static final String SERVER = "https://test-version.igov.org.ua";

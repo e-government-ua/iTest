@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import appLogic.Constants;
 import driverLogic.TestBase;
 
-public class InternationalPassportTest extends TestBase {
+public class InternationalPassport extends TestBase {
 	
 	
 	

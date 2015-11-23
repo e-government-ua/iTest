@@ -30,7 +30,7 @@ public class TestBase {
     public MainPage mainPage;
     public BankIdAuthorizationPage authorizationPage;
     public DocumentsPage documentsPage;
-    public MyLogPage logPage;
+    public MyJournalPage journalPage;
     public AboutPortalPage portalPage;
     public SelectAreaPage selectAreaPage;
     public StatusPage statusPage;
@@ -51,7 +51,7 @@ public class TestBase {
         mainPage = new MainPage(driver);
         authorizationPage = new BankIdAuthorizationPage(driver);
         documentsPage = new DocumentsPage(driver);
-        logPage = new MyLogPage(driver);
+        journalPage = new MyJournalPage(driver);
         portalPage = new AboutPortalPage(driver);
         selectAreaPage = new SelectAreaPage(driver);
         statusPage = new StatusPage(driver);

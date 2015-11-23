@@ -4,7 +4,7 @@ import driverLogic.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class AboutPortalTest extends TestBase {
+public class AboutPortal extends TestBase {
 
 
     @Test

@@ -11,12 +11,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 
-public class MyLogPage  extends ApplicationManager {
+public class MyJournalPage extends ApplicationManager {
 
     private WebDriver driver;
 
 
-    public MyLogPage (WebDriver driver) {
+    public MyJournalPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver;
     }

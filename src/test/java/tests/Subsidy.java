@@ -7,7 +7,7 @@ import appLogic.Constants;
 import driverLogic.TestBase;
 import pages.StatusPage;
 
-public class SubsidyTest extends TestBase {
+public class Subsidy extends TestBase {
 	
 	
 	

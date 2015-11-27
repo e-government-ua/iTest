@@ -74,14 +74,36 @@ public class TestServices extends TestBase {
                  .verifyStatus(status);
    }
 
-    //@Test
-    public void test_fields_bankid() {
+    @Test
+    public void test_fields_bankid() throws AWTException {
        // ------------------- Тестовые данные -------------------//
         String server = Constants.Server.VersionSERVER;
         String service = Constants.TestService.TEST_FIELDS_BANKID;
+        String region = Constants.Settings.Region.Dnipropetrovska;
+        String city = Constants.Settings.City.Dnipropetrovsk;
+        String country = "country";
+        String address = "address";
+        String document = "src/resources/test.jpg";
+        String status = "Заявка подана";
+        
 
         // --------------------- Тест-кейс----------------------//
         mainPage.goToTestServices(server,service);
+        selectAreaPage.selectRegion(region);
+        selectAreaPage.selectCity(city);
+        authorizationPage.privatBankAuthorization();
+        Assert.assertEquals(testFieldsBankidPage.serviceName.getText(), service);
+        testFieldsBankidPage
+                            .typeInCountryField(country)
+                            .typeInAddressField(address)
+                            .attachDocument(document)
+                            .clickConfirmButton()
+                            .verifyServiceSuccessCreated()
+                            .saveReferenceNumber(); 
+     mainPage.goToStatus();
+     statusPage.inputReferenceNumberForTest_fields_bankid()
+               .clickViewStatusButton()
+               .verifyStatus(status);
     }
 
     //@Test

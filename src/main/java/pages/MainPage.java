@@ -111,7 +111,7 @@ public class MainPage extends ApplicationManager {
 	aboutPortalLink.click();
     }
 
-    //    ------------------- Метод перехода в меню про портал  ------------------------------//
+    //    ------------------- Метод перехода в тестовой услуге  ------------------------------//
     public void goToTestServices(String server, String service) {
         driver.get(server+service);
     }

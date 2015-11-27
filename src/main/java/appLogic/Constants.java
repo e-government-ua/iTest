@@ -84,7 +84,8 @@ public class Constants {
     }
     //    ------------------- Сервера для запуска тестов  ------------------------------//
     public static class Server {
-        public static final String SERVER = "https://test-version.igov.org.ua";
+        public static final String VersionSERVER = "https://test-version.igov.org.ua";
+        public static final String TestSERVER = "https://test.igov.org.ua/";
         // https://test-version.igov.org.ua/   - для регреса
         // https://test.igov.org.ua/   - тестовый
     }

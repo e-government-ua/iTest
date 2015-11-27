@@ -12,6 +12,7 @@ import org.openqa.selenium.support.PageFactory;
 import ServicePages.CriminalRecordPage;
 import ServicePages.InternationalPassportPage;
 import ServicePages.SubsidyPage;
+import TestServicePages.TestDependenceFormPage;
 
 
 public class StatusPage extends ApplicationManager {
@@ -48,6 +49,10 @@ public class StatusPage extends ApplicationManager {
     }
 	public StatusPage inputReferenceNumberForInternationalPassport() {
 		refIdField.sendKeys(InternationalPassportPage.referenceNumber);
+		return this;
+	}
+	public StatusPage inputReferenceNumberForTest_dependence_form() {
+		refIdField.sendKeys(TestDependenceFormPage.referenceNumber);
 		return this;
 	}
 

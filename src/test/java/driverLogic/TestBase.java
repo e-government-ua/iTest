@@ -8,6 +8,7 @@ import com.google.common.io.Files;
 import ServicePages.CriminalRecordPage;
 import ServicePages.InternationalPassportPage;
 import ServicePages.SubsidyPage;
+import TestServicePages.TestDependenceFormPage;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -37,6 +38,7 @@ public class TestBase {
     public SubsidyPage subsidyPage;
     public CriminalRecordPage criminalRecordPage;
     public InternationalPassportPage internationalPassportPage;
+    public TestDependenceFormPage testDependenceFormPage;
 
 
 
@@ -58,7 +60,8 @@ public class TestBase {
         subsidyPage = new SubsidyPage(driver);
         criminalRecordPage = new CriminalRecordPage(driver);
         internationalPassportPage = new InternationalPassportPage(driver);
-        driver.get(Constants.Server.SERVER);
+        testDependenceFormPage = new TestDependenceFormPage(driver);
+        driver.get(Constants.Server.TestSERVER);
     }
 
     @AfterClass()

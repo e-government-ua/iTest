@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="1" total="1" passed="0">
+  <reporter-output>
+    <line>
+      <![CDATA[<center>Скриншот снят при падении теста test_dependence_form1.png, URL = https://test.igov.org.ua/service/671/general/place/built-in/region/0/city/0<br><div><a target="_blank" href="Screens/test_dependence_form1.png"><img  style="height:400px; width: 600px;"  src="Screens/test_dependence_form1.png"></a></div><center><br><br>]]>
+    </line>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="65113" started-at="2015-11-26T17:13:05Z" finished-at="2015-11-26T17:14:10Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="65113" started-at="2015-11-26T17:13:05Z" finished-at="2015-11-26T17:14:10Z">
+      <class name="tests.TestServices">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:tests.TestServices@75bd9247]" name="setUp" is-config="true" duration-ms="10777" started-at="2015-11-26T19:13:05Z" finished-at="2015-11-26T19:13:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="set()[pri:0, instance:tests.TestServices@75bd9247]" name="set" is-config="true" duration-ms="2007" started-at="2015-11-26T19:13:15Z" finished-at="2015-11-26T19:13:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- set -->
+        <test-method status="FAIL" signature="test_dependence_form1()[pri:0, instance:tests.TestServices@75bd9247]" name="test_dependence_form1" duration-ms="51224" started-at="2015-11-26T19:13:17Z" finished-at="2015-11-26T19:14:09Z">
+          <exception class="org.openqa.selenium.ElementNotVisibleException">
+            <message>
+              <![CDATA[Element is not currently visible and so may not be interacted with
+Command duration or timeout: 30.06 seconds
+Build info: version: '2.48.2', revision: '41bccdd10cf2c0560f637404c2d96164b67d9d67', time: '2015-10-09 13:08:06'
+System info: host: 'DESKTOP-447HEGD', ip: '192.168.1.4', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_65'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=42.0, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: ded3b8c9-0279-44fc-a3b3-9cadc89b8e5e]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementNotVisibleException: Element is not currently visible and so may not be interacted with
+Command duration or timeout: 30.06 seconds
+Build info: version: '2.48.2', revision: '41bccdd10cf2c0560f637404c2d96164b67d9d67', time: '2015-10-09 13:08:06'
+System info: host: 'DESKTOP-447HEGD', ip: '192.168.1.4', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_65'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=42.0, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: ded3b8c9-0279-44fc-a3b3-9cadc89b8e5e
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:647)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:326)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at TestServicePages.TestDependenceFormPage.attachDocument(TestDependenceFormPage.java:73)
+	at tests.TestServices.test_dependence_form1(TestServices.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:207)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:178)
+Caused by: org.openqa.selenium.ElementNotVisibleException: Element is not currently visible and so may not be interacted with
+Build info: version: '2.48.2', revision: '41bccdd10cf2c0560f637404c2d96164b67d9d67', time: '2015-10-09 13:08:06'
+System info: host: 'DESKTOP-447HEGD', ip: '192.168.1.4', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_65'
+Driver info: driver.version: unknown
+	at <anonymous class>.fxdriver.preconditions.visible(file:///C:/Users/nazar/AppData/Local/Temp/anonymous6229359057185781127webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:9981)
+	at <anonymous class>.DelayedCommand.prototype.checkPreconditions_(file:///C:/Users/nazar/AppData/Local/Temp/anonymous6229359057185781127webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12517)
+	at <anonymous class>.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/nazar/AppData/Local/Temp/anonymous6229359057185781127webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12534)
+	at <anonymous class>.fxdriver.Timer.prototype.setTimeout/<.notify(file:///C:/Users/nazar/AppData/Local/Temp/anonymous6229359057185781127webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:621)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementNotVisibleException -->
+          <reporter-output>
+            <line>
+              <![CDATA[<center>Скриншот снят при падении теста test_dependence_form1.png, URL = https://test.igov.org.ua/service/671/general/place/built-in/region/0/city/0<br><div><a target="_blank" href="Screens/test_dependence_form1.png"><img  style="height:400px; width: 600px;"  src="Screens/test_dependence_form1.png"></a></div><center><br><br>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- test_dependence_form1 -->
+        <test-method status="PASS" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:tests.TestServices@75bd9247]" name="takeScreenshot" is-config="true" duration-ms="241" started-at="2015-11-26T19:14:09Z" finished-at="2015-11-26T19:14:09Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=test_dependence_form1 status=FAILURE method=TestServices.test_dependence_form1()[pri:0, instance:tests.TestServices@75bd9247] output=<center>Скриншот снят при падении теста test_dependence_form1.png, URL = https://test.igov.org.ua/service/671/general/place/built-in/region/0/city/0<br><div><a target="_blank" href="Screens/test_dependence_form1.png"><img  style="height:400px; width: 600px;"  src="Screens/test_dependence_form1.png"></a></div><center><br><br>]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeScreenshot -->
+        <test-method status="PASS" signature="tearsDown()[pri:0, instance:tests.TestServices@75bd9247]" name="tearsDown" is-config="true" duration-ms="816" started-at="2015-11-26T19:14:09Z" finished-at="2015-11-26T19:14:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearsDown -->
+      </class> <!-- tests.TestServices -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

@@ -1,5 +1,6 @@
 package ServicePages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -22,7 +23,7 @@ public class SubsidyPage extends ApplicationManager {
     @FindBy(xpath = "//div[@class='service-name ng-binding']")
     public WebElement serviceName; // название услуги
     
-    @FindBy(name = "area")
+    @FindBy(xpath = "(//button[@type='button'])[3]")
     public WebElement areaField; // поле выбора раёна
     
     @FindBy(name = "place_of_living")
@@ -102,7 +103,9 @@ public class SubsidyPage extends ApplicationManager {
     //---------------- Методы ввода данных в поля------------------//   
     
     public SubsidyPage selectArea(String area){
-   new Select(areaField).selectByVisibleText(area);//выбор раёна
+    	areaField.click();
+        driver.findElement(By.linkText(area)).click();
+  // new Select(areaField).selectByVisibleText(area);//выбор раёна
     return this;
       }
     

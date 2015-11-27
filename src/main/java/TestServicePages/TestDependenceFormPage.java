@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
 import ServicePages.SubsidyPage;
 import appLogic.ApplicationManager;
@@ -49,7 +50,7 @@ public class TestDependenceFormPage extends ApplicationManager {
     public WebElement confirmButton; // кнопка подтверждения создания услуги
     
     @FindBy(xpath = "//div[@class='text-center ng-binding ng-scope']")
-    public WebElement successText; //текст удачной создании заявки
+    public WebElement successText; //текст удачной создании заявки 
     
     @FindBy(xpath = "//div[@class='text-center ng-binding']")
     public WebElement referenceNumberField; //поле референс заявки
@@ -120,7 +121,7 @@ public class TestDependenceFormPage extends ApplicationManager {
     }
     
     public TestDependenceFormPage verifyServiceSuccessCreated(){
-    	successText.isDisplayed();// проверка успешного создания заявки
+    	Assert.assertEquals(successText.getText(), "Результати будуть спрямовані на Ваш e-mail");// проверка успешного создания заявки
     	return this;
     }
 //=================методы по работе с номером заявки=======================//

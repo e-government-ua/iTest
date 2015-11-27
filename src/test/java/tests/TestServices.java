@@ -44,7 +44,7 @@ public class TestServices extends TestBase {
                   .clickViewStatusButton()
                   .verifyStatus(status);
     }
-   // @Test
+   @Test
     public void test_dependence_form2() throws AWTException {
        // ------------------- Тестовые данные -------------------//
        String server = Constants.Server.VersionSERVER;
@@ -52,7 +52,7 @@ public class TestServices extends TestBase {
        String serviceName = "_test_dependence_form";
        String client = "представник отримувача";
        String info = "test";
-       String document = "test.jpg";
+       String document = "src/resources/test.jpg";
        String email = "test@gmail.com";
        String status = "Заявка подана";
 

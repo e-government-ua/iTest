@@ -18,7 +18,7 @@ public class TestServices extends TestBase {
     @Test
      public void test_dependence_form1() throws AWTException {
         // ------------------- Тестовые данные -------------------//
-        String server = Constants.Server.TestSERVER;
+        String server = Constants.Server.VersionSERVER;
         String service = Constants.TestService.TEST_DEPENDENCE_FORM;
         String serviceName = "_test_dependence_form";
         String client = "отримувач особисто";

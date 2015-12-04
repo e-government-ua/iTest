@@ -1,1 +1,12 @@
 /target/
+*.backup
+*.iml
+*.iml
+*.log
+*.orig
+.DS_Store
+.checkstyle
+.classpath
+.idea
+.project
+.settings

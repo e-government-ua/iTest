@@ -40,6 +40,7 @@ public class MyDocument extends TestBase {
         Assert.assertEquals(documentsPage.infoBlockDocument.getText(), "Тут знаходяться всі Ваші документи, які були раніше завантажені авторизованими організаціями. Ви можете їх скачати або надати доступ третім особам (в тому числі іншим державним або приватним організаціям).");
         documentsPage.getAccessCodeWithPhoneEmail("Test");
         documentsPage.isAccessCodeNotNull();
+        app.pause(2000);
         Assert.assertEquals(documentsPage.alertInfoBlock.getText(), "Посилання, за яким користувач може отримати доступ");
         documentsPage.clickOkButton();
         authorizationPage.logOut();

@@ -1,50 +1,44 @@
 package TestServicePages;
 
-import org.openqa.selenium.By;
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
+import java.io.File;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 import ServicePages.SubsidyPage;
 import appLogic.ApplicationManager;
 
-import java.awt.*;
-import java.awt.datatransfer.StringSelection;
-import java.awt.event.KeyEvent;
-import java.io.File;
-
-public class TestDependenceFormPage extends ApplicationManager {
+public class TestFieldsBankidPage extends ApplicationManager {
 
 
 	private  WebDriver driver;
 
-    public TestDependenceFormPage (WebDriver driver) {
+    public TestFieldsBankidPage (WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver;
     }
     
-//---------------- Элементы страницы------------------//   
+    //---------------- Элементы страницы------------------// 
     
     @FindBy(xpath = "//div[@class='service-name ng-binding']")
     public WebElement serviceName; // название услуги
     
-    @FindBy(name = "client")
-    public WebElement clientField; // поле выбора заявителя
+    @FindBy(name = "bankIdsID_Country")
+    public WebElement countryField; // поле ввода гражданства
     
-    @FindBy(name = "info1")
-    public WebElement info1Field; //поле ввода информации
-    
-    @FindBy(name = "info2")
-    public WebElement info2Field; //поле ввода информации
+    @FindBy(name = "bankIdAddressFactual")
+    public WebElement addressField; // поле ввода адреса прописки
     
     @FindBy(css = "button.btn.btn-success")
     public WebElement attachDocumentButton;// поле аттача документа
-    
-    @FindBy(name = "email")
-    public WebElement emailField; //поле эмейла
     
     @FindBy(xpath = "//button[@class='btn btn-info']")
     public WebElement confirmButton; // кнопка подтверждения создания услуги
@@ -56,27 +50,19 @@ public class TestDependenceFormPage extends ApplicationManager {
     public WebElement referenceNumberField; //поле референс заявки
 
     public static String referenceNumber;
-
-  //---------------- Методы ввода данных в поля------------------//   
     
-    public TestDependenceFormPage selectClient(String client){
-   new Select(clientField).selectByVisibleText(client);//выбор заявителя
-    return this;
-      }
-    
-    public TestDependenceFormPage typeInInfo1Field(String info){
-    	info1Field.clear();
-    	info1Field.sendKeys(info); // ввод информации
+    //---------------- Методы ввода данных в поля------------------// 
+    public TestFieldsBankidPage typeInCountryField(String country){
+    	countryField.clear();
+    	countryField.sendKeys(country); // ввод гражданства
     	 return this;
-        }
-    public TestDependenceFormPage typeInInfo2Field(String info){
-    	info2Field.clear();
-    	info2Field.sendKeys(info); // ввод информации
+    }
+    public TestFieldsBankidPage typeInAddressField(String address){
+    	addressField.clear();
+    	addressField.sendKeys(address); // ввод адреса прописки
     	 return this;
-         }
-
-
-// upload Document
+    }
+ // upload Document
 
     public static void setClipboardData(String document) {
         StringSelection stringSelection = new StringSelection(document);
@@ -84,7 +70,7 @@ public class TestDependenceFormPage extends ApplicationManager {
                 .setContents(stringSelection, null);
     }
 
-    public TestDependenceFormPage attachDocument (String document) throws  AWTException {
+    public TestFieldsBankidPage attachDocument (String document) throws  AWTException {
         File file = new File(document);
         //
         attachDocumentButton.click();
@@ -108,19 +94,12 @@ public class TestDependenceFormPage extends ApplicationManager {
 
         return this;
     }
-
-       public TestDependenceFormPage typeInEmailField(String email){
-    	emailField.clear();
-    	emailField.sendKeys(email); // ввод емайла
-        return this;
-        }
-    
-    public TestDependenceFormPage clickConfirmButton(){
+    public TestFieldsBankidPage clickConfirmButton(){
     	confirmButton.click(); //нажать конпку подтверждения создания услуги
     	return this;
     }
     
-    public TestDependenceFormPage verifyServiceSuccessCreated(){
+    public TestFieldsBankidPage verifyServiceSuccessCreated(){
     	Assert.assertEquals(successText.getText(), "Результати будуть спрямовані на Ваш e-mail");// проверка успешного создания заявки
     	return this;
     }
@@ -137,10 +116,7 @@ public class TestDependenceFormPage extends ApplicationManager {
 	}
 
 	public void setReferenceNumber(String referenceNumber) {
-		TestDependenceFormPage.referenceNumber = referenceNumber;
+		TestFieldsBankidPage.referenceNumber = referenceNumber;
 	}
     
-
-
-
 }

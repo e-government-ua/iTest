@@ -30,10 +30,11 @@ public class Constants {
             public static final String Dnipropetrovska = "Дніпропетровська";
             public static final String Poltavska = "Полтавська";
         }
+
         //    ------------------- Города  ------------------------------//
         public static class City {
             public static final String Dnipropetrovsk = "Дніпропетровськ";
-            public static final String Poltava= "Полтава";
+            public static final String Poltava = "Полтава";
         }
 
         //    ------------------- Услуги  -----------------//
@@ -41,13 +42,16 @@ public class Constants {
         public static class ServiceMVD {
             public static final String CriminalRecord = "Надання довідки про відсутність (наявність) судимості або обмежень, передбачених кримінально-процесуальним законодавством";
         }
+
         //Взаємодія з державними органами
         public static class InteractionWithPublicAuthorities {
-        	public static final String Subsidy = "Отримання субсидії на оплату житлово-комунальних послуг";
+            public static final String Subsidy = "Отримання субсидії на оплату житлово-комунальних послуг";
+            public static final String REGISTRATION = "Зняття з реєстрації місця проживання";
         }
-      //Посвідчення особи, Громадянство, Місце проживання
+
+        //Посвідчення особи, Громадянство, Місце проживання
         public static class Identity {
-        	public static final String InternationalPassport = "Видача/заміна паспорта громадянина для виїзду за кордон";
+            public static final String InternationalPassport = "Видача/заміна паспорта громадянина для виїзду за кордон";
         }
 
         //    ------------------- Данные для подачи заявок  -----------------//
@@ -72,9 +76,10 @@ public class Constants {
 
 
     }
+
     //    ------------------- УРЛ для работы с тестовыми услугами  -----------------//
     public static class TestService {
-        public static final String TEST_DEPENDENCE_FORM  = "/service/671/general";
+        public static final String TEST_DEPENDENCE_FORM = "/service/671/general";
         public static final String TEST_FIELDS_BANKID = "/service/720/general";
         public static final String TEST_LIQPAY = "/service/674/general";
         public static final String TEST_MAILER = "/service/755/general";
@@ -82,6 +87,7 @@ public class Constants {
         public static final String TEST_QUEUE_CANCEL = "/service/756/general";
         public static final String TEST_ZP_CNAP_MAILER = "/service/1426/general";
     }
+
     //    ------------------- Сервера для запуска тестов  ------------------------------//
     public static class Server {
         public static final String VersionSERVER = "https://test-version.igov.org.ua";

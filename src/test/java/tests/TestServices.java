@@ -15,10 +15,10 @@ public class TestServices extends TestBase {
 
     //TODO https://github.com/e-government-ua/iTest/issues/1
 
-    @Test
+    //@Test
      public void test_dependence_form1() throws AWTException {
         // ------------------- Тестовые данные -------------------//
-        String server = Constants.Server.TestSERVER;
+        String server = Constants.Server.VersionSERVER;
         String service = Constants.TestService.TEST_DEPENDENCE_FORM;
         String serviceName = "_test_dependence_form";
         String client = "отримувач особисто";
@@ -44,7 +44,7 @@ public class TestServices extends TestBase {
                   .clickViewStatusButton()
                   .verifyStatus(status);
     }
-   // @Test
+   @Test
     public void test_dependence_form2() throws AWTException {
        // ------------------- Тестовые данные -------------------//
        String server = Constants.Server.VersionSERVER;
@@ -52,7 +52,7 @@ public class TestServices extends TestBase {
        String serviceName = "_test_dependence_form";
        String client = "представник отримувача";
        String info = "test";
-       String document = "test.jpg";
+       String document = "src/resources/test.jpg";
        String email = "test@gmail.com";
        String status = "Заявка подана";
 
@@ -75,13 +75,36 @@ public class TestServices extends TestBase {
    }
 
     //@Test
-    public void test_fields_bankid() {
+    public void test_fields_bankid() throws AWTException {
        // ------------------- Тестовые данные -------------------//
         String server = Constants.Server.VersionSERVER;
         String service = Constants.TestService.TEST_FIELDS_BANKID;
+        String serviceName = "_test_fields_bankid";
+        String region = Constants.Settings.Region.Dnipropetrovska;
+        String city = Constants.Settings.City.Dnipropetrovsk;
+        String country = "country";
+        String address = "address";
+        String document = "src/resources/test.jpg";
+        String status = "Заявка подана";
+        
 
         // --------------------- Тест-кейс----------------------//
         mainPage.goToTestServices(server,service);
+        selectAreaPage.selectRegion(region);
+        selectAreaPage.selectCity(city);
+        authorizationPage.privatBankAuthorization();
+        Assert.assertEquals(testFieldsBankidPage.serviceName.getText(), serviceName);
+        testFieldsBankidPage
+                            .typeInCountryField(country)
+                            .typeInAddressField(address)
+                            .attachDocument(document)
+                            .clickConfirmButton()
+                            .verifyServiceSuccessCreated()
+                            .saveReferenceNumber(); 
+     mainPage.goToStatus();
+     statusPage.inputReferenceNumberForTest_fields_bankid()
+               .clickViewStatusButton()
+               .verifyStatus(status);
     }
 
     //@Test
@@ -89,9 +112,40 @@ public class TestServices extends TestBase {
         // ------------------- Тестовые данные -------------------//
         String server = Constants.Server.VersionSERVER;
         String service = Constants.TestService.TEST_LIQPAY;
+        String serviceName = "_test_liqpay";
+        String region = Constants.Settings.Region.Dnipropetrovska;
+        String city = Constants.Settings.City.Dnipropetrovsk;
+        String bankIdAddressField = Constants.Settings.Data.BirthLocal;
+        String vin = "12345678912345678";
+        String brand = "brand";
+        String model = "model";
+        String number = "number";
+        String invoiceNumber = "invoiceNumber";
+        String phone = "380931234567";
+        String email = Constants.Settings.Data.E_MAIL;
+        String status = "Заявка подана";
 
         // --------------------- Тест-кейс----------------------//
         mainPage.goToTestServices(server,service);
+        authorizationPage.privatBankAuthorization();
+        Assert.assertEquals(testLiqpayPage.serviceName.getText(), serviceName);
+        testLiqpayPage
+                            .typeInBankIdAddressField(bankIdAddressField)
+                            .typeInVinField(vin)
+                            .typeInBrandField(brand)
+                            .typeInModelField(model)
+                            .typeInNumberField(number)
+                            .typeInInvoiceNumberField(invoiceNumber)
+                            .selectDate()
+                            .typeInPhoneField(phone)
+                            .typeInEmailField(email)
+                            .clickConfirmButton()
+                            .verifyServiceSuccessCreated()
+                            .saveReferenceNumber(); 
+     mainPage.goToStatus();
+     statusPage.inputReferenceNumberForTest_liqpay()
+               .clickViewStatusButton()
+               .verifyStatus(status);
     }
 
     //@Test

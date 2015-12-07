@@ -44,4 +44,10 @@ public class SelectAreaPage extends ApplicationManager {
         driver.findElement(By.linkText(city)).click();
     }
 
+    //---------------- Методы выбора табов услуги ------------------//
+
+    public void clickServiceTab (String serviceTab) {
+        driver.findElement(By.xpath("//a[contains(.,'" + serviceTab + "')]")).click();
+    }
+
 }

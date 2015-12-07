@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 /target/
 =======
@@ -7,3 +8,17 @@
 /target/*
 /test-output/*
 >>>>>>> Stashed changes
+=======
+
+.idea/
+/target/*
+/test-output/*
+*.log
+*.orig
+.DS_Store
+.checkstyle
+.classpath
+.idea
+.project
+.settings
+>>>>>>> 58604db90c7400570f99a83267649d40d90d4cdf

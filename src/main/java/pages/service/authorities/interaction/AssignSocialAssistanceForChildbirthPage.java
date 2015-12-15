@@ -15,6 +15,7 @@ import java.awt.event.KeyEvent;
 import java.io.File;
 
 public class AssignSocialAssistanceForChildbirthPage extends BaseServicePage {
+
     private WebDriver driver;
 
     public AssignSocialAssistanceForChildbirthPage (WebDriver driver) {

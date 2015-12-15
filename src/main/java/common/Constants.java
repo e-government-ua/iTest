@@ -47,7 +47,7 @@ public class Constants {
         public static class InteractionWithPublicAuthorities {
             public static final String Subsidy = "Отримання субсидії на оплату житлово-комунальних послуг";
             public static final String REGISTRATION = "Зняття з реєстрації місця проживання";
-            public static final String AssignSocialAssistanceForChildbirth = "Призначення соціальної допомоги при народженні дитини";
+            public static final String ASSIGN_SOCIAL_ASSISTANCE_FOR_CHILD_BIRTH = "Призначення соціальної допомоги при народженні дитини";
         }
 
         //Посвідчення особи, Громадянство, Місце проживання

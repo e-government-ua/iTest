@@ -12,7 +12,7 @@ public class AssignSocialAssistanceForChildbirth extends TestBase {
     @Test(description = "Призначення соціальної допомоги при народженні дитини через національного оператора поштовогозв'язку")
     public void successMessagesServicesByPostOffice() throws AWTException {
         //------------------- Тестовые данные -------------------//
-        String service = Constants.Settings.InteractionWithPublicAuthorities.AssignSocialAssistanceForChildbirth;
+        String service = Constants.Settings.InteractionWithPublicAuthorities.ASSIGN_SOCIAL_ASSISTANCE_FOR_CHILD_BIRTH;
         String region = Constants.Settings.Region.Dnipropetrovska;
         String address1 = "проспект карла маркса 22";
         String address2 = "проспект карла маркса 22";
@@ -55,7 +55,7 @@ public class AssignSocialAssistanceForChildbirth extends TestBase {
     @Test(description = "Призначення соціальної допомоги при народженні дитини на рахунок у банку")
     public void successMessagesServicesByAccountBank() throws AWTException {
         //------------------- Тестовые данные -------------------//
-        String service = Constants.Settings.InteractionWithPublicAuthorities.AssignSocialAssistanceForChildbirth;
+        String service = Constants.Settings.InteractionWithPublicAuthorities.ASSIGN_SOCIAL_ASSISTANCE_FOR_CHILD_BIRTH;
         String region = Constants.Settings.Region.Dnipropetrovska;
         String address1 = "проспект карла маркса 22";
         String address2 = "проспект карла маркса 22";
@@ -69,7 +69,7 @@ public class AssignSocialAssistanceForChildbirth extends TestBase {
         String bankMFO = "305299";
         String bankOKPO = "14360570";
         String bankAccount = "1234567890123456";
-        String bankTicket = "/src/resources/test.jpg";
+        String bankTicket = "src/resources/test.jpg";
         String status = "Заявка подана";
 
         //------------------- Тест-кейс -------------------//

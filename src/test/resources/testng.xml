@@ -20,6 +20,8 @@
             <!--POLICE.TRAFFIC-->
             <class name="test.portal.services.police.traffic.CriminalRecord"/>
             <class name="test.portal.services.TestServices"/>
+            <!--TAXES-->
+            <class name="test.portal.services.taxes.PersonalIncomeCertificate"/>
         </classes>
     </test>
 </suite>

@@ -9,30 +9,31 @@ import pages.BaseServicePage;
 
 public class PersonalIncomeCertificatePage extends BaseServicePage {
 
-    //---------------- Элементы страницы------------------//
+
+    //------------------- Page elements -------------------//
 
     public static String referenceNumber;
 
     @FindBy(xpath = "//select[@name='area']")
-    public WebElement fiscalBranchField; //отделение фискальной службы
+    public WebElement fiscalBranchField; //fiscal branch
 
     @FindBy(xpath = "//input[@name='phone']")
-    public WebElement phoneField;// поле ввода номера телефона
+    public WebElement phoneField; //phone number
 
     @FindBy(xpath = "//input[@name='email']")
-    public WebElement emailField; //поле имейла
+    public WebElement emailField; //email
 
     @FindBy(xpath = "//input[@name='place_living']")
-    public WebElement placeOfLivingField; //поле ввода адреса проживания
+    public WebElement placeOfLivingField; //living address
 
     @FindBy(xpath = "//input[@name='date_start']")
-    public WebElement startOfPeriodField; //дата начала периода справки
+    public WebElement startOfPeriodField; //certificate's information start of period
 
     @FindBy(xpath = "//input[@name='date_stop']")
-    public WebElement endOfPeriodField; //дата конца периода справки
+    public WebElement endOfPeriodField; //certificate's information end of period
 
     @FindBy(xpath = "//input[@name='aim']")
-    public WebElement aimField; //цель получения справки
+    public WebElement aimField; //certificate request purpose
 
     @FindBy(xpath = "//div[@class='text-center ng-binding ng-scope']")
     private WebElement successText;
@@ -43,48 +44,48 @@ public class PersonalIncomeCertificatePage extends BaseServicePage {
     }
 
 
-    //---------------- Методы ввода данных в поля------------------//
+    //------------------- Fields input methods -------------------//
 
     public PersonalIncomeCertificatePage selectFiscalBranchField(String fiscalBranch) {
-        new Select(fiscalBranchField).selectByVisibleText(fiscalBranch); //выбор отделения фискальной службы
+        new Select(fiscalBranchField).selectByVisibleText(fiscalBranch); //fiscal branch selection
         return this;
     }
 
     public PersonalIncomeCertificatePage typeInPhoneField (String phone) {
-        phoneField.sendKeys(phone); //ввод номера телефона
+        phoneField.sendKeys(phone); //phone number
         return this;
     }
 
     public PersonalIncomeCertificatePage typeInEmailField (String email) {
         emailField.clear();
-        emailField.sendKeys(email); //ввод имейла
+        emailField.sendKeys(email); //email
         return this;
     }
 
     public PersonalIncomeCertificatePage typeInPlaceLivingField (String placeLiving) {
         placeOfLivingField.clear();
-        placeOfLivingField.sendKeys(placeLiving); //ввод адреса проживания
+        placeOfLivingField.sendKeys(placeLiving); //living address
         return this;
     }
 
     public PersonalIncomeCertificatePage selectStartOfPeriodField (String startOfPeriod) {
-        startOfPeriodField.sendKeys(startOfPeriod); //выбор даты начала периода справки
-        return this; //временно, пока не реализован выбор даты в календаре
+        startOfPeriodField.sendKeys(startOfPeriod); //certificate's information start of period
+        return this; //TEMP, until interaction with Calendar dropdown will be implemented
     }
 
     public PersonalIncomeCertificatePage selectEndOfPeriodField (String endOfPeriod) {
-        endOfPeriodField.sendKeys(endOfPeriod);  //выбор даты окончания периода справки
-        return this; //временно, пока не реализован выбор даты в календаре
+        endOfPeriodField.sendKeys(endOfPeriod);  //certificate's information start of period
+        return this; //TEMP, until interaction with Calendar dropdown will be implemented
     }
 
     public PersonalIncomeCertificatePage typeInAimField (String aim) {
         aimField.clear();
-        aimField.sendKeys(aim); //ввод цели получения справки
+        aimField.sendKeys(aim); //certificate request purpose
         return this;
     }
 
     public PersonalIncomeCertificatePage verifyServiceSuccessCreated() {
-        successText.isDisplayed();// проверка успешного создания заявки
+        successText.isDisplayed();
         return this;
     }
 

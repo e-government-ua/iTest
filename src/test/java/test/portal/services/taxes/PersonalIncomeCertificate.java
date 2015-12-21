@@ -7,26 +7,26 @@ import test.TestBase;
 
 public class PersonalIncomeCertificate extends TestBase {
 
-    @Test(priority = 1)
+    @Test(priority = 10)
     public void personalIncomeCertificateTest() {
-
+        //------------------- Test Data -------------------//
         String service = Constants.Settings.Taxes.PERSONAL_INCOME_CERTIFICATE;
         String region = Constants.Settings.Region.DNIPROPETROVSKA;
-        String startOfPeriod = ""; //временно, пока не реализован выбор даты в календаре
-        String endOfPeriod = ""; //временно, пока не реализован выбор даты в календаре
+        String startOfPeriod = ""; //TEMP, until interaction with Calendar dropdown will be implemented
+        String endOfPeriod = ""; //TEMP, until interaction with Calendar dropdown will be implemented
         String fiscalBranch = "Дніпропетровськ - АНД (пров. Універсальний, 12)|0461";
         String phone = "0931234567";
-        String email = "test@gmail.com";
+        String email = "test@mail.com";
         String placeOfLiving = "Дніпропетровськ, вул. Поля, 1";
         String aim = "ТЕСТ для подання за вимогою";
         String status = "Заявка подана";
 
+        //------------------- Test Case -------------------//
         mainPage.typeInSearchField(service);
         mainPage.clickService(service);
         Assert.assertEquals(selectAreaPage.serviceName.getText(), service);
         selectAreaPage.selectRegion(region);
         authorizationPage.privatBankAuthorization();
-
         personalIncomeCertificatePage
                 .selectFiscalBranchField(fiscalBranch)
                 .typeInPhoneField(phone)
@@ -38,7 +38,6 @@ public class PersonalIncomeCertificate extends TestBase {
                 .clickConfirmButton()
                 .verifyServiceSuccessCreated()
                 .saveReferenceNumber();
-
         mainPage.goToStatus();
         statusPage.inputReferenceNumberForPersonalIncomeCertificate()
                 .clickViewStatusButton()

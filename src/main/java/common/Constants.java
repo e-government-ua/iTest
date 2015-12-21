@@ -35,6 +35,11 @@ public class Constants {
             public static final String INTERNATIONAL_PASSPORT = "Видача/заміна паспорта громадянина для виїзду за кордон";
         }
 
+        // Податки
+        public static class Taxes {
+            public static final String PERSONAL_INCOME_CERTIFICATE = "Отримання довідки про доходи фізичних осіб";
+        }
+
         //------------------- Данные для подачи заявок  --------------//
         public static class Data {
             public static final String PHONE = "380102030405";

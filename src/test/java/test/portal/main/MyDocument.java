@@ -6,7 +6,7 @@ import test.TestBase;
 
 public class MyDocument extends TestBase {
 
-    @Test (priority = 1)
+    @Test (priority = 10)
     public void getAccessToDocumentTest() {
         mainPage.goToDocuments();
         Assert.assertEquals(documentsPage.formSignInBankId.getText(), "Крок 1. Увійдіть в систему через BankID\n" +
@@ -28,7 +28,7 @@ public class MyDocument extends TestBase {
         documentsPage.isDocumentFound();
     }
 
-    @Test (priority = 2)
+    @Test (priority = 20)
     public void getAccessToDocumentWithPhoneEmailTest() {
         mainPage.goToDocuments();
         Assert.assertEquals(documentsPage.formSignInBankId.getText(), "Крок 1. Увійдіть в систему через BankID\n" +
@@ -53,7 +53,7 @@ public class MyDocument extends TestBase {
 
     }
 
-    @Test (priority = 3)
+    @Test (priority = 30)
     public void checkNotaryTabTest() {
         mainPage.goToDocuments();
         documentsPage.goToNotaryTab();

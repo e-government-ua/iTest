@@ -7,7 +7,7 @@ import test.TestBase;
 
 public class MainPage extends TestBase {
 
-    @Test (priority = 1)
+    @Test (priority = 10)
     public void simpleSearchArchivalCertificates() throws Exception {
         String service = "Видача архівних довідок, копій, витягів";
         mainPage.typeInSearchField(service);
@@ -15,10 +15,10 @@ public class MainPage extends TestBase {
         Assert.assertEquals(mainPage.services.getText(), service);
     }
 
-    @Test (priority = 2)
+    @Test (priority = 20)
     public void availabilityStatisticTab() throws Exception {
         // ------------------- Тестовые данные -------------------//
-        String service = Constants.Settings.ServiceMVD.CRIMINAL_RECORD;
+        String service = Constants.Services.MVD.CRIMINAL_RECORD;
         String serviceTab = "Статистика";
         String timingColumn = "Таймінг ?";
         String timingRow = "годин";

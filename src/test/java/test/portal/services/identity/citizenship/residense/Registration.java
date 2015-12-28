@@ -3,6 +3,7 @@ package test.portal.services.identity.citizenship.residense;
 import common.Constants;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.service.identity.citizenship.residense.UnregisterFromLocationPage;
 import test.TestBase;
 
 /**
@@ -11,20 +12,19 @@ import test.TestBase;
  */
 public class Registration extends TestBase {
 
-    @Test (priority = 1)
+    @Test (priority = 10)
     public void unregisterFromCurrentAddressTest() {
 
-        String service = Constants.Settings.InteractionWithPublicAuthorities.REGISTRATION;
-        String region = Constants.Settings.Region.DNIPROPETROVSKA;
-        String city = Constants.Settings.City.DNIPROPETROVSK;
-        String birthDate = Constants.Settings.Data.BIRTH_DAY;
+        String service = Constants.Services.InteractionWithPublicAuthorities.REGISTRATION;
+        String region = Constants.Areas.Region.DNIPROPETROVSKA;
+        String city = Constants.Areas.City.DNIPROPETROVSK;
+        String birthDate = Constants.TestData.PersonalInfo.BIRTH_DAY;
         String birthLocation = "Україна,Дніпропетровська,Дніпропетровськ";
         String nationality = "Україна";
         String district = "Амур-Нижньодніпровський";
         String phone = "0931234567";
         String email = "test@gmail.com";
         String area = "Дніпропетровськ (Центральний), вул. Поля, 1";
-        String status = "Заявка подана";
         String surnameChanged = "Ні";
         String militStatus = "Ні";
         String kids = "Ні";
@@ -57,8 +57,8 @@ public class Registration extends TestBase {
                 .saveReferenceNumber();
 
         mainPage.goToStatus();
-        statusPage.inputReferenceNumberForUnregisterFromLocation()
+        statusPage.enterReferenceNumber(UnregisterFromLocationPage.referenceNumber)
                 .clickViewStatusButton()
-                .verifyStatus(status);
+                .verifyStatus(Constants.Status.SUCCESS_STATUS);
     }
 }

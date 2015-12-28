@@ -47,6 +47,9 @@ public class MainPage extends ApplicationManager {
     @FindBy(xpath = "//input[@ng-change='search()']")
     public WebElement searchField;            // поле поиска
 
+    @FindBy(xpath = "//a[contains(text(), 'Всі послуги')] ")
+    private WebElement expandMoreServices;       //to display all found services when more than 4 services are found
+
     //---------------- Выбор сервиса по региону  ------------------//
 
 
@@ -103,5 +106,9 @@ public class MainPage extends ApplicationManager {
 
     public void goToService() {
         driver.get("https://test-version.igov.org.ua/service/176/general"); //временно из за бага поиска
+    }
+
+    public void clickExpandAllFoundServices() {
+        expandMoreServices.click();
     }
 }

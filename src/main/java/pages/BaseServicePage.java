@@ -15,6 +15,17 @@ public class BaseServicePage extends ApplicationManager {
     @FindBy(xpath = "//div[@class='text-center ng-binding']")
     protected WebElement referenceNumberField; //поле референс заявки
 
+    @FindBy(name = "phone")
+    protected WebElement phoneField;// поле ввода телефона
+
+    @FindBy(xpath = "//input[@name='email']")
+    protected WebElement emailField; //email
+
+    @FindBy(xpath = "//div[@class='text-center ng-binding ng-scope']")
+    protected WebElement successText;
+
+    protected static final String DATE_FORMAT = "dd/MM/yyyy";
+    
     public String referenceNumber;
 
     public BaseServicePage clickConfirmButton() {

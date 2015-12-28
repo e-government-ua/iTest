@@ -4,23 +4,32 @@ public class Constants {
 
     public static class Settings {
 
+    }
+
+    public static class Areas {
+
         //------------------- Регионы  -------------------//
         public static class Region {
             public static final String DNIPROPETROVSKA = "Дніпропетровська";
             public static final String POLTAVSKA = "Полтавська";
+            public static final String ZAPORIZHSKA = "Запорізька";
         }
 
         //------------------- Города  --------------------//
         public static class City {
             public static final String DNIPROPETROVSK = "Дніпропетровськ";
             public static final String POLTAVA = "Полтава";
+
         }
 
-        //------------------- Услуги  --------------------//
+    }
+
+    public static class Services {
 
         // Міліція та ДАІ
-        public static class ServiceMVD {
+        public static class MVD {
             public static final String CRIMINAL_RECORD = "Надання довідки про відсутність (наявність) судимості або обмежень, передбачених кримінально-процесуальним законодавством (терміново)";
+            public static final String REGISTER_USED_CAR = "Реєстрація авто з пробігом в МРЕВ";
         }
 
         // Взаємодія з державними органами
@@ -28,6 +37,7 @@ public class Constants {
             public static final String SUBSIDY = "Отримання субсидії на оплату житлово-комунальних послуг";
             public static final String REGISTRATION = "Зняття з реєстрації місця проживання";
             public static final String ASSIGN_SOCIAL_ASSISTANCE_FOR_CHILD_BIRTH = "Призначення соціальної допомоги при народженні дитини";
+            public static final String CERTIFICATE_OF_LAND_SIZE = "Надання довідки про наявність та розмір земельної частки (паю)";
         }
 
         // Посвідчення особи, Громадянство, Місце проживання
@@ -35,8 +45,17 @@ public class Constants {
             public static final String INTERNATIONAL_PASSPORT = "Видача/заміна паспорта громадянина для виїзду за кордон";
         }
 
+        // Податки
+        public static class Taxes {
+            public static final String PERSONAL_INCOME_CERTIFICATE = "Отримання довідки про доходи фізичних осіб";
+        }
+
+    }
+
+    public static class TestData {
+
         //------------------- Данные для подачи заявок  --------------//
-        public static class Data {
+        public static class PersonalInfo {
             public static final String PHONE = "380102030405";
             public static final String FIO_UA = "Дмитро Олександрович Дубілет";
             public static final String FIO_RUS = "Дубилет Дмитрий Александрович";
@@ -47,7 +66,6 @@ public class Constants {
         }
 
         //---------- Данные для входа в Банк ИД ПриаптБанк  ----------//
-
         public static class BankIDprivatBank {
             public static final String LOGIN = "+380102030405";   // номер телефона
             public static final String PASSWORD = "value";   // пароль
@@ -63,6 +81,7 @@ public class Constants {
             public static final String BANK_IPN = "143605704021";
             public static final String BANK_ACCOUNT = "1234567890123456";
         }
+
     }
 
     //------------------- УРЛ для работы с тестовыми услугами  ------------------//
@@ -83,4 +102,9 @@ public class Constants {
         // https://test-version.igov.org.ua/   - для регреса
         // https://test.igov.org.ua/   - тестовый
     }
+
+    public static class Status {
+        public static final String SUCCESS_STATUS= "Заявка подана";
+    }
+
 }

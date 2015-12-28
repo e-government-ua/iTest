@@ -15,6 +15,7 @@ import org.testng.Reporter;
 import utils.PropertyLoader;
 import utils.WebDriverFactory;
 
+import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -239,4 +240,65 @@ public class ApplicationManager {
         // calendar.set(Calendar.HOUR, 3);
         return calendar;
     }
+
+
+    //------------------- Attachment methods -------------------//
+
+    public ApplicationManager attachDocument(WebElement locator, String document) {
+        unhide(locator);
+        File file = new File(document);
+        locator.sendKeys(file.getAbsolutePath());
+        waitAttachUpload(locator);
+        return this;
+    }
+
+    public void unhide(WebElement element) {
+        String script = "var element = arguments[0];"
+                + "element.style.display='inline';";
+        ((JavascriptExecutor) driver).executeScript(script, element);
+    }
+
+    public void waitAttachUpload(WebElement element) {
+        while (!element.isEnabled()) {
+            try {
+                System.out.println("Wait, wait, wait..");
+                Thread.sleep(200);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+    //------------------- OLD Attachment methods -------------------//
+
+//        public ApplicationManager attachDocument (WebElement locator, String document) throws AWTException {
+//        File file = new File(document);
+//        //
+//        locator.click();
+//        pause(2000); // временно
+//        //
+//        setClipboardData(file.getAbsolutePath());
+//        //
+//        pause(2000); // временно
+//        Robot robot = new Robot();
+//        robot.delay(1000);
+//        robot.keyPress(KeyEvent.VK_CONTROL);
+//        robot.delay(300);
+//        robot.keyPress(KeyEvent.VK_V);
+//        robot.delay(300);
+//        robot.keyRelease(KeyEvent.VK_V);
+//        robot.delay(300);
+//        robot.keyRelease(KeyEvent.VK_CONTROL);
+//        robot.delay(300);
+//        robot.keyPress(KeyEvent.VK_ENTER);
+//        robot.delay(300);
+//        robot.keyRelease(KeyEvent.VK_ENTER);
+//        robot.delay(300);
+//
+//        return this;
+//    }
+
+
+
 }

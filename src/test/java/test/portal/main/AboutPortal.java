@@ -6,7 +6,7 @@ import test.TestBase;
 
 public class AboutPortal extends TestBase {
 
-    @Test (priority = 1)
+    @Test (priority = 10)
     public void checkInfoAboutPortal() {
         mainPage.goToAboutPortal();
         Assert.assertEquals(portalPage.infoBlockOne.getText(), "На цьому порталі зібрано послуги, які державні органи України надають громадянам та бізнесу. Частина послуг надається через Інтернет (такі послуги позначені іконкою), інша частина послуг все ще очікує на своє впровадження в електронній формі.");

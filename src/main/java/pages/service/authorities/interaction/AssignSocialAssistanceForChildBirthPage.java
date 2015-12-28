@@ -11,8 +11,6 @@ import pages.BaseServicePage;
 
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
-import java.awt.event.KeyEvent;
-import java.io.File;
 
 public class AssignSocialAssistanceForChildBirthPage extends BaseServicePage {
 
@@ -40,10 +38,10 @@ public class AssignSocialAssistanceForChildBirthPage extends BaseServicePage {
     @FindBy(name = "email")
     public WebElement emailField; //поле эмейла
 
-    @FindBy(xpath = "//p[@name='inn_scan']/button")
+    @FindBy(xpath = "(//input[@type='file'])[1]")
     public WebElement attachInnScanDocument;// поле аттача справки о присвоении ИНН
 
-    @FindBy(xpath = "//p[@name='birthdocument_scan']/button")
+    @FindBy(xpath = "(//input[@type='file'])[2]")
     public WebElement attachBirthScanDocument;// поле аттача свидетельства о рождении
 
     @FindBy(name = "area")
@@ -67,7 +65,7 @@ public class AssignSocialAssistanceForChildBirthPage extends BaseServicePage {
     @FindBy(name = "bank_account")
     public WebElement bankAccountField; //
 
-    @FindBy(xpath = "//p[@name='bankticket']/button")
+    @FindBy(xpath = "(//input[@type='file'])[3]")
     public WebElement attachBankTicket;// поле аттача довідки з банку з реквізитами рахунку
 
     @FindBy(xpath = "//button[@class='btn btn-info']")
@@ -114,32 +112,6 @@ public class AssignSocialAssistanceForChildBirthPage extends BaseServicePage {
                 .setContents(stringSelection, null);
     }
 
-    public AssignSocialAssistanceForChildBirthPage attachDocument (WebElement locator, String document) throws AWTException {
-        File file = new File(document);
-        //
-        locator.click();
-        pause(2000); // временно
-        //
-        setClipboardData(file.getAbsolutePath());
-        //
-        pause(2000); // временно
-        Robot robot = new Robot();
-        robot.delay(1000);
-        robot.keyPress(KeyEvent.VK_CONTROL);
-        robot.delay(300);
-        robot.keyPress(KeyEvent.VK_V);
-        robot.delay(300);
-        robot.keyRelease(KeyEvent.VK_V);
-        robot.delay(300);
-        robot.keyRelease(KeyEvent.VK_CONTROL);
-        robot.delay(300);
-        robot.keyPress(KeyEvent.VK_ENTER);
-        robot.delay(300);
-        robot.keyRelease(KeyEvent.VK_ENTER);
-        robot.delay(300);
-
-        return this;
-    }
 
     public AssignSocialAssistanceForChildBirthPage selectArea(String area){
         new Select(areaField).selectByVisibleText(area);  // выбор раена обслуживания

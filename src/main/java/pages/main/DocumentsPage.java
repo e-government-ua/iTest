@@ -232,7 +232,7 @@ private String accessCode;
         fillNameOfRecipientField(name);
         yesRadioButton.click();
         typePhone();
-        emailField.sendKeys(Constants.Settings.Data.E_MAIL);
+        emailField.sendKeys(Constants.TestData.PersonalInfo.E_MAIL);
         clickGetCodeButton();
         saveCodeToAVariable();
         clickOkButton();
@@ -256,7 +256,7 @@ private String accessCode;
 
     private void typePhone() {
         phoneField.clear();
-        phoneField.sendKeys("+" + Constants.Settings.Data.PHONE);
+        phoneField.sendKeys("+" + Constants.TestData.PersonalInfo.PHONE);
     }
 
     public void typeSMSCode() {

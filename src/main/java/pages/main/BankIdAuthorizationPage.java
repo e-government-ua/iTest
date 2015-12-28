@@ -57,14 +57,14 @@ public class BankIdAuthorizationPage extends ApplicationManager {
 
     //    ------------------- Метод проверки ФИО после входа  ------------------------------//
     public void verifyFIO() {
-        Assert.assertEquals(fio.getText(), Constants.Settings.Data.FIO_UA);
+        Assert.assertEquals(fio.getText(), Constants.TestData.PersonalInfo.FIO_UA);
     }
 
     //    ------------------- Метод ввода ОТР  ------------------------------//
     public void typeOTP() {
-        otpOne.sendKeys(Constants.Settings.BankIDprivatBank.OTP1);
-        otpTwo.sendKeys(Constants.Settings.BankIDprivatBank.OTP2);
-        otpThree.sendKeys(Constants.Settings.BankIDprivatBank.OTP3);
+        otpOne.sendKeys(Constants.TestData.BankIDprivatBank.OTP1);
+        otpTwo.sendKeys(Constants.TestData.BankIDprivatBank.OTP2);
+        otpThree.sendKeys(Constants.TestData.BankIDprivatBank.OTP3);
         confirm.click();
     }
 
@@ -81,8 +81,8 @@ public class BankIdAuthorizationPage extends ApplicationManager {
     //    ------------------- Метод ввода логина пароля ------------------------------//
     public void typeLoginPassword() {
         phone.clear();
-        phone.sendKeys(Constants.Settings.BankIDprivatBank.LOGIN);
-        password.sendKeys(Constants.Settings.BankIDprivatBank.PASSWORD);
+        phone.sendKeys(Constants.TestData.BankIDprivatBank.LOGIN);
+        password.sendKeys(Constants.TestData.BankIDprivatBank.PASSWORD);
         signIn.click();
 
     }

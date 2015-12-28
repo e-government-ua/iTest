@@ -18,9 +18,6 @@ public class InternationalPassportPage extends BaseServicePage {
     @FindBy(name = "biometrical")
     private WebElement biometricalField; // поле "Ви бажаєте замовити біометричний паспорт?"
 
-    @FindBy(name = "phone")
-    private WebElement phoneField;// поле ввода телефона
-
     @FindBy(name = "email")
     private WebElement emailField; //поле эмейла
 

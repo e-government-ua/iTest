@@ -6,15 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import pages.service.authorities.interaction.AssignSocialAssistanceForChildBirthPage;
-import pages.service.police.traffic.CriminalRecordPage;
-import pages.service.identity.citizenship.residense.InternationalPassportPage;
-import pages.service.authorities.interaction.SubsidyPage;
-import pages.service.identity.citizenship.residense.UnregisterFromLocationPage;
-import pages.service.test.TestDependenceFormPage;
-import pages.service.test.TestFieldsBankidPage;
-import pages.service.test.TestLiqpayPage;
-import pages.service.test.TestMailerPage;
 
 public class StatusPage extends ApplicationManager {
 
@@ -33,49 +24,8 @@ public class StatusPage extends ApplicationManager {
 
     // =============================================== МЕТОДЫ  =================================================//
 
-    public StatusPage inputReferenceNumberForSubsidy() {
-        refIdField.sendKeys(SubsidyPage.referenceNumber);
-        return this;
-    }
-
-    public StatusPage inputReferenceNumberForCriminalRecord() {
-        refIdField.sendKeys(CriminalRecordPage.referenceNumber);
-        return this;
-    }
-
-    public StatusPage inputReferenceNumberForInternationalPassport() {
-        refIdField.sendKeys(InternationalPassportPage.referenceNumber);
-        return this;
-    }
-
-    public StatusPage inputReferenceNumberForTest_dependence_form() {
-        refIdField.sendKeys(TestDependenceFormPage.referenceNumber);
-        return this;
-    }
-
-    public StatusPage inputReferenceNumberForTest_fields_bankid() {
-        refIdField.sendKeys(TestFieldsBankidPage.referenceNumber);
-        return this;
-    }
-
-    public StatusPage inputReferenceNumberForTest_liqpay() {
-        refIdField.sendKeys(TestLiqpayPage.referenceNumber);
-        return this;
-    }
-
-    public StatusPage inputReferenceNumberForTest_mailer() {
-        refIdField.sendKeys(TestMailerPage.referenceNumber);
-        return this;
-    }
-
-
-    public StatusPage inputReferenceNumberForUnregisterFromLocation() {
-        refIdField.sendKeys(UnregisterFromLocationPage.referenceNumber);
-        return this;
-    }
-
-    public StatusPage inputReferenceNumberForAssignSocialAssistanceForChildbirth() {
-        refIdField.sendKeys(AssignSocialAssistanceForChildBirthPage.referenceNumber);
+    public StatusPage enterReferenceNumber(String number) {
+        refIdField.sendKeys(number);
         return this;
     }
 

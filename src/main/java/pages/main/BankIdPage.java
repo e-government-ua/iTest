@@ -8,6 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import pages.BasePage;
 
+import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated;
 import static org.testng.Assert.assertEquals;
 
@@ -95,9 +96,10 @@ public class BankIdPage extends BasePage {
     }
 
     // Method for authorization through PrivatBank
-    public void loginByPrivatBankBankID() {
+    public void loginByPrivatBankBankID(){
         clickOnBankIdButton();
         clickOnPrivatBank();
+        //app.wait.until(elementToBeClickable(phone));// temporarily
         typeLoginAndPassword();
         typeOTP();
         verifyFIO();

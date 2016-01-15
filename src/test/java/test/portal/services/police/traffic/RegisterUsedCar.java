@@ -26,7 +26,7 @@ public class RegisterUsedCar extends TestBase {
         String number = "AH4568EE";
         String transitNumber = "AВ7845EE";
         String invoice = "АБВ123456";
-        String invoiceDate = "01/02/2009";
+        String invoiceDate = "18/06/2015";
         String mreoAddress = "узвіз Тольятті, 2";
         String phone = "0931234567";
         String email = Constants.TestData.PersonalInfo.E_MAIL;

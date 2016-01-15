@@ -31,7 +31,7 @@ public class InternationalPassportPage extends BaseServicePage {
     @FindBy(xpath = "//select[@ng-disabled='!selected.date || slotsLoading']")
     private WebElement timeField; // поле выбора времени визита
 
-    @FindBy(xpath = "//div[@class='text-center ng-binding ng-scope']")
+    @FindBy(xpath = "//div[contains(@ng-if,'!data.formData.params.response.value')]")
     private WebElement successText; //текст удачной создании заявки
 
     public InternationalPassportPage() {
@@ -88,6 +88,7 @@ public class InternationalPassportPage extends BaseServicePage {
             selected = false;
         }
         Assert.assertTrue(selected, "NO AVAILABLE SLOTS!, NO AVAILABLE SLOTS !, NO AVAILABLE SLOTS!");
+        app.pause(1000);
         return this;
     }
 

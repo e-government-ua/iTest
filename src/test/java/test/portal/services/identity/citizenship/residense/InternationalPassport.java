@@ -17,7 +17,7 @@ public class InternationalPassport extends TestBase {
         String region = Constants.Areas.Region.DNIPROPETROVSKA;
         String havePassport = "ні, буду отримувати перший раз";
         String biometrical = "ні";
-        String phone = "0931234567";
+        String phone = Constants.TestData.PersonalInfo.PHONE;
         String email = "test@gmail.com";
         String area = "Дніпропетровськ (Центральний), вул. Поля, 1";
 

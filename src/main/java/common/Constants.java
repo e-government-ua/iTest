@@ -52,7 +52,7 @@ public class Constants {
 
         //------------------- Данные для подачи заявок  --------------//
         public static class PersonalInfo {
-            public static final String PHONE = "380102030405";
+            public static final String PHONE = "380932030405";
             public static final String FIO_UA = "Дмитро Олександрович Дубілет";
             public static final String FIO_RUS = "Дубилет Дмитрий Александрович";
             public static final String E_MAIL = "vidokgulich@gmail.com";

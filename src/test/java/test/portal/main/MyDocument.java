@@ -15,7 +15,7 @@ public class MyDocument extends TestBase {
         assertEquals(app.documentsPage.infoBlockDocument.getText(), "Тут знаходяться всі Ваші документи, які були раніше завантажені авторизованими організаціями. Ви можете їх скачати або надати доступ третім особам (в тому числі іншим державним або приватним організаціям).");
         app.documentsPage.getAccessCode("Test");
         app.documentsPage.isAccessCodeNotNull();
-        app.pause(2000); // временно
+        //app.pause(2000); // временно
         assertEquals(app.documentsPage.alertInfoBlock.getText(), "Посилання, за яким користувач може отримати доступ");
         app.documentsPage.clickOkButton();
         app.bankIdPage.logOut();

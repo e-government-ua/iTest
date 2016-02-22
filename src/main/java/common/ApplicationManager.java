@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 import pages.BasePage;
 import pages.main.*;
+import pages.service.authorities.interaction.AppealToHeadOfRegion;
 import pages.service.authorities.interaction.AssignSocialAssistanceForChildBirthPage;
 import pages.service.authorities.interaction.LandSizeAndExistencePage;
 import pages.service.authorities.interaction.SubsidyPage;
@@ -66,6 +67,7 @@ public class ApplicationManager {
     public RegisterUsedCarPage registerUsedCarPage;
     public LandSizeAndExistencePage landSizeAndExistencePage;
     public ModalDialog modalDialog;
+    public AppealToHeadOfRegion appealToHeadOfRegion;
     // Helpers
     public NavHelper navHelper;
 
@@ -124,6 +126,7 @@ public class ApplicationManager {
         pensionAmountCertificatePage = new PensionAmountCertificatePage();
         certificateFromUnifiedRegisterPage = new CertificateFromUnifiedRegisterPage();
         modalDialog = new ModalDialog();
+        appealToHeadOfRegion = new AppealToHeadOfRegion();
 
         // Create helpers objects
         navHelper = new NavHelper();
@@ -171,7 +174,7 @@ public class ApplicationManager {
         while (!locator.isEnabled()) {
             try {
                 log.info("Wait for file uploaded..");
-                Thread.sleep(2000);
+                Thread.sleep(3000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

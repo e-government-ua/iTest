@@ -29,9 +29,12 @@ public class BaseServicePage extends BasePage {
     @FindBy(xpath = "//div[@class='text-center ng-binding ng-scope']")
     protected WebElement successText;
 
+    @FindBy(name = "place_of_reg")
+    private WebElement addressOfRegistration;
+
     private static final String DATE_FORMAT = "dd/MM/yyyy";
 
-    private String referenceNumber;
+    protected String referenceNumber;
 
 
     // Methods
@@ -46,6 +49,7 @@ public class BaseServicePage extends BasePage {
     }
 
     public String saveReferenceNumber() {
+
         String refField = referenceNumberField.getText();
         this.referenceNumber = refField.substring(16, 25);
         return referenceNumber;
@@ -59,4 +63,29 @@ public class BaseServicePage extends BasePage {
             log.info("Check if " + dateToPArse + " complies to expected date format " + DATE_FORMAT);
         }
     }
+
+    public BaseServicePage typeInPhoneField(String phone){
+        phoneField.clear();
+        phoneField.sendKeys(phone); // ввод телефона
+        return this;
+    }
+
+    public BaseServicePage typeInEmailField(String email){
+        emailField.clear();
+        emailField.sendKeys(email); // ввод эмейла
+        return this;
+    }
+
+    public BaseServicePage typeInRegistrationAddress(String address){
+        addressOfRegistration.clear();
+        addressOfRegistration.sendKeys(address);
+        return this;
+    }
+
+    public String getReferenceNumber(){
+        return referenceNumber;
+    }
+
+
+
 }

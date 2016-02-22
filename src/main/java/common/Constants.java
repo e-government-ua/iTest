@@ -12,6 +12,7 @@ public class Constants {
             public static final String POLTAVSKA = "Полтавська";
             public static final String ZAPORIZHSKA = "Запорізька";
             public static final String KYIVSKA = "Київська";
+            public static final String KHERSONSKA = "Херсонська";
         }
 
         //------------------- Города  --------------------//
@@ -37,6 +38,7 @@ public class Constants {
             public static final String REGISTRATION = "Зняття з реєстрації місця проживання";
             public static final String ASSIGN_SOCIAL_ASSISTANCE_FOR_CHILD_BIRTH = "Призначення соціальної допомоги при народженні дитини";
             public static final String CERTIFICATE_OF_LAND_SIZE = "Надання довідки про наявність та розмір земельної частки (паю)";
+            public static final String APPEAL_TO_HEAD_OF_REGION = "Звернення до голови ОДА";
         }
 
         // Посвідчення особи, Громадянство, Місце проживання

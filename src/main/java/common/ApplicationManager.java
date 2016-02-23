@@ -3,6 +3,8 @@ package common;
 import entities.Browser;
 import helpers.BaseHelper;
 import helpers.NavHelper;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,7 +12,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 import pages.BasePage;
 import pages.main.*;
-import pages.service.authorities.interaction.AppealToHeadOfRegion;
 import pages.service.authorities.interaction.AssignSocialAssistanceForChildBirthPage;
 import pages.service.authorities.interaction.LandSizeAndExistencePage;
 import pages.service.authorities.interaction.SubsidyPage;
@@ -18,6 +19,7 @@ import pages.service.identity.citizenship.residense.InternationalPassportPage;
 import pages.service.identity.citizenship.residense.UnregisterFromLocationPage;
 import pages.service.police.traffic.CriminalRecordPage;
 import pages.service.police.traffic.RegisterUsedCarPage;
+import pages.service.social.help.PregnancyPage;
 import pages.service.taxes.CertificateFromUnifiedRegisterPage;
 import pages.service.taxes.PensionAmountCertificatePage;
 import pages.service.taxes.PersonalIncomeCertificatePage;
@@ -27,9 +29,6 @@ import utils.WebDriverFactory;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
-
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
 
 public class ApplicationManager {
 
@@ -67,7 +66,7 @@ public class ApplicationManager {
     public RegisterUsedCarPage registerUsedCarPage;
     public LandSizeAndExistencePage landSizeAndExistencePage;
     public ModalDialog modalDialog;
-    public AppealToHeadOfRegion appealToHeadOfRegion;
+    public PregnancyPage pregnancyPage;
     // Helpers
     public NavHelper navHelper;
 
@@ -126,7 +125,7 @@ public class ApplicationManager {
         pensionAmountCertificatePage = new PensionAmountCertificatePage();
         certificateFromUnifiedRegisterPage = new CertificateFromUnifiedRegisterPage();
         modalDialog = new ModalDialog();
-        appealToHeadOfRegion = new AppealToHeadOfRegion();
+        pregnancyPage = new PregnancyPage();
 
         // Create helpers objects
         navHelper = new NavHelper();
@@ -174,7 +173,7 @@ public class ApplicationManager {
         while (!locator.isEnabled()) {
             try {
                 log.info("Wait for file uploaded..");
-                Thread.sleep(3000);
+                Thread.sleep(2000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

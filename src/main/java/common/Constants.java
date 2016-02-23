@@ -22,6 +22,7 @@ public class Constants {
             public static final String DNIPRODZERGINSK = "Дніпродзержинськ";
             public static final String BUCHA = "Буча";
         }
+
     }
 
     public static class Services {
@@ -52,6 +53,12 @@ public class Constants {
             public static final String PENSION_AOUNT_CERTIFICATE = "Видача довідки про доходи (розмір пенсії)";
             public static final String CERTIFICATE_FROM_UNIFIED_REGISTER = "Надання витягу з реєстру платників єдиного податку";
         }
+
+        // Податки
+        public static class Pregnancy {
+            public static final String CERTIFICATE_PREGNANCY = "Призначення допомоги у зв'язку з вагітністю та пологами";
+            public static final String CERTIFICATE_SOCIAL = "Взаємодія з державними органами";
+        }
     }
 
     public static class TestData {
@@ -67,7 +74,7 @@ public class Constants {
             public static final String RESIDENT = "Українське";
         }
 
-        //---------- Данные для входа в Банк ИД ПриаптБанк  ----------//
+        //---------- Данные для входа в Банк ИД ПриватБанк  ----------//
         public static class BankIDprivatBank {
             public static final String LOGIN = "+380102030405";   // номер телефона
             public static final String PASSWORD = "value";   // пароль
@@ -115,6 +122,7 @@ public class Constants {
         public static final String SUCCESS_STATUS6 = "Заявка подана - обробка дмс";
         public static final String SUCCESS_STATUS7 = "Заявка подана - Взяти в роботу";
         public static final String SUCCESS_STATUS8 = "Заявка подана";
+        public static final String SUCCESS_STATUS9 = "Заявка подана - перевірка документів";
     }
 
     public static class AlertMessages {

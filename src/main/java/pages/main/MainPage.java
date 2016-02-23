@@ -43,7 +43,16 @@ public class MainPage extends BasePage {
     // Method for service selection
     public void clickService(String service) {
         WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[contains(.,'" + service + "')]"))).click();
+        //Проверка на наличие апострофа в названии услуги (если есть апостроф ломается XPATH,
+        // так как он в виде одинарной кавычки)
+        if (service.contains("'")) {
+            String resultStr = service.substring(0, service.indexOf("'"));
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[contains(.,'" + resultStr + "')]")))
+                    .click();
+        } else {
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[contains(.,'" + service + "')]")))
+                    .click();
+        }
     }
 
     // Method for searching the service

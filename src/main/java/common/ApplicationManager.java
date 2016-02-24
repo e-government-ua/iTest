@@ -3,6 +3,8 @@ package common;
 import entities.Browser;
 import helpers.BaseHelper;
 import helpers.NavHelper;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,6 +19,7 @@ import pages.service.identity.citizenship.residense.InternationalPassportPage;
 import pages.service.identity.citizenship.residense.UnregisterFromLocationPage;
 import pages.service.police.traffic.CriminalRecordPage;
 import pages.service.police.traffic.RegisterUsedCarPage;
+import pages.service.social.help.PregnancyPage;
 import pages.service.taxes.CertificateFromUnifiedRegisterPage;
 import pages.service.taxes.PensionAmountCertificatePage;
 import pages.service.taxes.PersonalIncomeCertificatePage;
@@ -26,9 +29,6 @@ import utils.WebDriverFactory;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
-
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
 
 public class ApplicationManager {
 
@@ -66,6 +66,7 @@ public class ApplicationManager {
     public RegisterUsedCarPage registerUsedCarPage;
     public LandSizeAndExistencePage landSizeAndExistencePage;
     public ModalDialog modalDialog;
+    public PregnancyPage pregnancyPage;
     // Helpers
     public NavHelper navHelper;
 
@@ -124,6 +125,7 @@ public class ApplicationManager {
         pensionAmountCertificatePage = new PensionAmountCertificatePage();
         certificateFromUnifiedRegisterPage = new CertificateFromUnifiedRegisterPage();
         modalDialog = new ModalDialog();
+        pregnancyPage = new PregnancyPage();
 
         // Create helpers objects
         navHelper = new NavHelper();

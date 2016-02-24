@@ -123,6 +123,8 @@ public class WebDriverFactory {
 
         } else if (FIREFOX.equals(browser)) {
             FirefoxProfile ffProfile = new FirefoxProfile();
+            //Для обхода прокси
+
             // Authentication Hack for Firefox
             if (username != null && password != null) {
                 ffProfile.setPreference("network.http.phishy-userpass-length", 255);

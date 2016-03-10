@@ -12,6 +12,7 @@ import autoTests.pages.service.social.help.PregnancyPage;
 import autoTests.pages.service.taxes.CertificateFromUnifiedRegisterPage;
 import autoTests.pages.service.taxes.PensionAmountCertificatePage;
 import autoTests.pages.service.taxes.PersonalIncomeCertificatePage;
+import autoTests.pages.service.test.*;
 import org.openqa.selenium.WebDriver;
 
 import static org.testng.Assert.assertEquals;
@@ -1040,6 +1041,321 @@ public class TestSuite extends CustomMethods {
 				.clickViewStatusButton()
 				.verifyStatus(Constants.Status.SUCCESS_STATUS9);
 		bankIdPage.logOut();
+	}
+	//</editor-fold>
+
+	//<editor-fold desc="G1 - ---.">
+	public void G1_TestService(WebDriver driver) throws Exception {
+		// ------------------- Тестовые данные -------------------//
+		String server = Constants.Server.VERSION_SERVER;
+		String service = Constants.TestService.TEST_DEPENDENCE_FORM;
+		String serviceName = "_test_dependence_form";
+		String client = "отримувач особисто";
+		String info = "test";
+		String document = "src/test/resources/files/test.jpg";
+		String email = Constants.TestData.PersonalInfo.E_MAIL;
+
+		addStepToTheReport("1. Перейдем на страницу");
+		MainPage mainPage = new MainPage(driver);
+		TestDependenceFormPage testDependenceFormPage = new TestDependenceFormPage(driver);
+		BankIdPage bankIdPage = new BankIdPage(driver);
+		StatusPage statusPage = new StatusPage(driver);
+		driver.get(configVariables.baseUrl);
+
+		addStepToTheReport("2. Выполним проверки");
+		mainPage.goToTestServices(server, service);
+		bankIdPage.loginByPrivatBankBankID();
+		assertEquals(testDependenceFormPage.getServiceName(), serviceName);
+		testDependenceFormPage
+				.selectClient(client)
+				.typeInInfo1Field(info);
+		customMethods.attachDocument(testDependenceFormPage.attachDocumentButton, document, driver);
+		testDependenceFormPage
+				.typeInEmailField(email)
+				.clickConfirmButton()
+				.verifyServiceSuccessCreated(email)
+				.saveReferenceNumber();
+		bankIdPage.logOut();
+		customMethods.openStatusesPage(driver);
+		statusPage.enterReferenceNumber(TestDependenceFormPage.referenceNumber)
+				.clickViewStatusButton()
+				.verifyStatus(Constants.Status.SUCCESS_STATUS);
+	}
+	//</editor-fold>
+	//<editor-fold desc="G2 - ---.">
+	public void G2_TestService(WebDriver driver) throws Exception {
+		// ------------------- Тестовые данные -------------------//
+		String server = Constants.Server.VERSION_SERVER;
+		String service = Constants.TestService.TEST_DEPENDENCE_FORM;
+		String serviceName = "_test_dependence_form";
+		String client = "представник отримувача";
+		String info = "test";
+		String document = "src/test/resources/files/test.jpg";
+		String email = Constants.TestData.PersonalInfo.E_MAIL;
+
+		addStepToTheReport("1. Перейдем на страницу");
+		MainPage mainPage = new MainPage(driver);
+		TestDependenceFormPage testDependenceFormPage = new TestDependenceFormPage(driver);
+		BankIdPage bankIdPage = new BankIdPage(driver);
+		StatusPage statusPage = new StatusPage(driver);
+		driver.get(configVariables.baseUrl);
+
+		addStepToTheReport("2. Выполним проверки");
+		mainPage.goToTestServices(server, service);
+		bankIdPage.loginByPrivatBankBankID();
+		assertEquals(testDependenceFormPage.getServiceName(), serviceName);
+		testDependenceFormPage
+				.selectClient(client)
+				.typeInInfo2Field(info);
+		attachDocument(testDependenceFormPage.attachDocumentButton, document, driver);
+		testDependenceFormPage
+				.typeInEmailField(email)
+				.clickConfirmButton()
+				.verifyServiceSuccessCreated(email)
+				.saveReferenceNumber();
+		bankIdPage.logOut();
+		customMethods.openStatusesPage(driver);
+		statusPage.enterReferenceNumber(TestDependenceFormPage.referenceNumber)
+				.clickViewStatusButton()
+				.verifyStatus(Constants.Status.SUCCESS_STATUS);
+	}
+	//</editor-fold>
+	//<editor-fold desc="G3 - ---.">
+	public void G3_TestService(WebDriver driver) throws Exception {
+		// ------------------- Тестовые данные -------------------//
+		String server = Constants.Server.VERSION_SERVER;
+		String service = Constants.TestService.TEST_FIELDS_BANKID;
+		String serviceName = "_test_fields_bankid";
+		String region = Constants.Areas.Region.DNIPROPETROVSKA;
+		String city = Constants.Areas.City.DNIPROPETROVSK;
+		String country = "country";
+		String address = "address";
+		String email = Constants.TestData.PersonalInfo.E_MAIL;
+		String document = "src/test/resources/files/test.jpg";
+
+		addStepToTheReport("1. Перейдем на страницу");
+		MainPage mainPage = new MainPage(driver);
+		TestFieldsBankidPage testFieldsBankidPage = new TestFieldsBankidPage(driver);
+		SelectAreaPage selectAreaPage = new SelectAreaPage(driver);
+		BankIdPage bankIdPage = new BankIdPage(driver);
+		StatusPage statusPage = new StatusPage(driver);
+		driver.get(configVariables.baseUrl);
+
+		addStepToTheReport("2. Выполним проверки");
+		mainPage.goToTestServices(server, service);
+		selectAreaPage.selectRegion(region);
+		selectAreaPage.selectCity(city);
+		bankIdPage.loginByPrivatBankBankID();
+		assertEquals(testFieldsBankidPage.getServiceName(), serviceName);
+		testFieldsBankidPage
+				.typeInCountryField(country)
+				.typeInAddressField(address)
+				.typeInEmailField(email);
+		customMethods.attachDocument(testFieldsBankidPage.attachDocumentButton, document, driver);
+		testFieldsBankidPage
+				.clickConfirmButton()
+				.verifyServiceSuccessCreated(email)
+				.saveReferenceNumber();
+		bankIdPage.logOut();
+		customMethods.openStatusesPage(driver);
+		statusPage.enterReferenceNumber(TestFieldsBankidPage.referenceNumber)
+				.clickViewStatusButton()
+				.verifyStatus(Constants.Status.SUCCESS_STATUS1);
+	}
+	//</editor-fold>
+	//<editor-fold desc="G4 - ---.">
+	public void G4_TestService(WebDriver driver) throws Exception {
+		// ------------------- Тестовые данные -------------------//
+		String server = Constants.Server.VERSION_SERVER;
+		String service = Constants.TestService.TEST_LIQPAY;
+		String serviceName = "_test_liqpay";
+		String region = Constants.Areas.Region.DNIPROPETROVSKA;
+		String city = Constants.Areas.City.DNIPROPETROVSK;
+		String bankIdAddressField = Constants.TestData.PersonalInfo.BIRTH_LOCAL;
+		String vin = "12345678912345678";
+		String brand = "brand";
+		String model = "model";
+		String number = "number";
+		String invoiceNumber = "invoiceNumber";
+		String phone = Constants.TestData.PersonalInfo.PHONE;
+		String email = Constants.TestData.PersonalInfo.E_MAIL;
+
+		addStepToTheReport("1. Перейдем на страницу");
+		MainPage mainPage = new MainPage(driver);
+		TestLiqpayPage testLiqpayPage = new TestLiqpayPage(driver);
+		BankIdPage bankIdPage = new BankIdPage(driver);
+		StatusPage statusPage = new StatusPage(driver);
+		driver.get(configVariables.baseUrl);
+
+		addStepToTheReport("2. Выполним проверки");
+		mainPage.goToTestServices(server, service);
+		bankIdPage.loginByPrivatBankBankID();
+		assertEquals(testLiqpayPage.getServiceName(), serviceName);
+		testLiqpayPage
+				.typeInBankIdAddressField(bankIdAddressField)
+				.typeInVinField(vin)
+				.typeInBrandField(brand)
+				.typeInModelField(model)
+				.typeInNumberField(number)
+				.typeInInvoiceNumberField(invoiceNumber)
+				.selectDate()
+				.typeInPhoneField(phone)
+				.typeInEmailField(email)
+				.clickConfirmButton()
+				.verifyServiceSuccessCreated()
+				.saveReferenceNumber();
+		bankIdPage.logOut();
+		customMethods.openStatusesPage(driver);
+		statusPage.enterReferenceNumber(TestLiqpayPage.referenceNumber)
+				.clickViewStatusButton()
+				.verifyStatus(Constants.Status.SUCCESS_STATUS);
+	}
+	//</editor-fold>
+	//<editor-fold desc="G5 - ---.">
+	public void G5_TestService(WebDriver driver) throws Exception {
+		// ------------------- Тестовые данные -------------------//
+		String server = Constants.Server.VERSION_SERVER;
+		String service = Constants.TestService.TEST_MAILER;
+		String serviceName = "_test_mailer";
+		String email = Constants.TestData.PersonalInfo.E_MAIL;
+		String document = "src/test/resources/files/test.jpg";
+
+		addStepToTheReport("1. Перейдем на страницу");
+		MainPage mainPage = new MainPage(driver);
+		TestMailerPage testMailerPage = new TestMailerPage(driver);
+		BankIdPage bankIdPage = new BankIdPage(driver);
+		StatusPage statusPage = new StatusPage(driver);
+		driver.get(configVariables.baseUrl);
+
+		addStepToTheReport("2. Выполним проверки");
+		mainPage.goToTestServices(server, service);
+		bankIdPage.loginByPrivatBankBankID();
+		assertEquals(testMailerPage.getServiceName(), serviceName);
+		testMailerPage
+				.typeInEmailField(email);
+		customMethods.attachDocument(testMailerPage.attachDocumentButton, document, driver);
+		testMailerPage
+				.clickConfirmButton()
+				.verifyServiceSuccessCreated()
+				.saveReferenceNumber();
+		bankIdPage.logOut();
+		customMethods.openStatusesPage(driver);
+		statusPage.enterReferenceNumber(TestMailerPage.referenceNumber)
+				.clickViewStatusButton()
+				.verifyStatus(Constants.Status.SUCCESS_STATUS);
+	}
+	//</editor-fold>
+	//<editor-fold desc="G6 - Тест пустой.">
+	public void G6_TestService(WebDriver driver) throws Exception {
+		// ------------------- Тестовые данные -------------------//
+		String server = Constants.Server.VERSION_SERVER;
+		String service = Constants.TestService.TEST_PRINT_FORM;
+
+		addStepToTheReport("1. Перейдем на страницу");
+		MainPage mainPage = new MainPage(driver);
+		driver.get(configVariables.baseUrl);
+
+		addStepToTheReport("2. Выполним проверки");
+		mainPage.goToTestServices(server, service);
+	}
+	//</editor-fold>
+	//<editor-fold desc="G7 - Тест пустой.">
+	public void G7_TestService(WebDriver driver) throws Exception {
+		// ------------------- Тестовые данные -------------------//
+		String server = Constants.Server.VERSION_SERVER;
+		String service = Constants.TestService.TEST_QUEUE_CANCEL;
+
+		addStepToTheReport("1. Перейдем на страницу");
+		MainPage mainPage = new MainPage(driver);
+		driver.get(configVariables.baseUrl);
+
+		addStepToTheReport("2. Выполним проверки");
+		mainPage.goToTestServices(server, service);
+	}
+	//</editor-fold>
+	//<editor-fold desc="G8 - ---.">
+	public void G8_TestService(WebDriver driver) throws Exception {
+		// ------------------- Тестовые данные -------------------//
+		String server = Constants.Server.VERSION_SERVER;
+		String service = Constants.TestService.TEST_ZP_CNAP_MAILER;
+		String region = Constants.Areas.Region.ZAPORIZHSKA;
+		String serviceName = "_test_ZP_cnap_mailer";
+		String email = Constants.TestData.PersonalInfo.E_MAIL;
+		String phone = Constants.TestData.PersonalInfo.PHONE;
+		String document = "src/test/resources/files/test.jpg";
+
+		addStepToTheReport("1. Перейдем на страницу");
+		MainPage mainPage = new MainPage(driver);
+		TestZPCnapMailerPage testZPCnapMailerPage = new TestZPCnapMailerPage(driver);
+		SelectAreaPage selectAreaPage = new SelectAreaPage(driver);
+		BankIdPage bankIdPage = new BankIdPage(driver);
+		StatusPage statusPage = new StatusPage(driver);
+		driver.get(configVariables.baseUrl);
+
+		addStepToTheReport("2. Выполним проверки");
+		mainPage.goToTestServices(server, service);
+		selectAreaPage.selectRegion(region);
+		pause(6000);
+		bankIdPage.loginByPrivatBankBankID();
+		assertEquals(testZPCnapMailerPage.getServiceName(), serviceName);
+		testZPCnapMailerPage
+				.typeInPhoneField(phone)
+				.typeInEmailField(email);
+		customMethods.attachDocument(testZPCnapMailerPage.attachDocumentButton, document, driver);
+		testZPCnapMailerPage
+				.clickConfirmButton()
+				.verifyServiceSuccessCreated()
+				.saveReferenceNumber();
+		bankIdPage.logOut();
+		customMethods.openStatusesPage(driver);
+		statusPage.enterReferenceNumber(TestZPCnapMailerPage.referenceNumber)
+				.clickViewStatusButton()
+				.verifyStatus(Constants.Status.SUCCESS_STATUS2);
+	}
+	//</editor-fold>
+	public void G9_TestService (WebDriver driver) throws Exception{
+		String service = Constants.Services.InteractionWithPublicAuthorities.APPEAL_TO_HEAD_OF_REGION;
+		String region = Constants.Areas.Region.KHERSONSKA;
+		String phoneNumber = "+380631234567";
+		String email = "vidokgulich@gmail.com";
+		String address = "проспект карла маркса 22";
+		String typeAppeal = "скарга";
+		String themeAppeal = "Обороноздатність, суверенітет, міждержавні і міжнаціональні відносини";
+		String theme ="Обороноздатність, суверенітет, міждержавні і міжнаціональні відносини";
+		String messageTextField = "Обороноздатність, суверенітет, міждержавні і міжнаціональні відносини";
+		String responseWay = "Електронна версія";
+
+		MainPage mainPage = new MainPage(driver);
+		SelectAreaPage selectAreaPage = new SelectAreaPage(driver);
+		BankIdPage bankIdPage = new BankIdPage(driver);
+		StatusPage statusPage = new StatusPage(driver);
+		autoTests.pages.service.appeal.head.region.AppealToHeadOfRegion appealToHeadOfRegion = new autoTests.pages.service.appeal.head.region.AppealToHeadOfRegion(driver);
+		addStepToTheReport("1. Перейдем на страницу");
+		driver.get(configVariables.baseUrl);
+		mainPage.typeInSearchField(service);
+		mainPage.clickService(service);
+		addStepToTheReport("2. Выполним проверки");
+		assertEquals(selectAreaPage.serviceName.getText(), service);
+		selectAreaPage.selectRegion(region);
+		bankIdPage.loginByPrivatBankBankID();
+		assertEquals(appealToHeadOfRegion.getServiceName(),service);
+		appealToHeadOfRegion
+				.clickTurnOffAutoFillField()
+				.fillPhoneNumber(phoneNumber)
+				.fillEmailField(email)
+				.fillAddressField(address)
+				.selectTypeAppeal(typeAppeal)
+				.selectThemeAppeal(themeAppeal)
+				.fillThemeField(theme)
+				.fillMessageTextField(messageTextField)
+				.selectResponseWay(responseWay)
+				.clickConfirmButton();
+		appealToHeadOfRegion
+				.saveReferenceNumber();
+		customMethods.openStatusesPage(driver);
+		statusPage.enterReferenceNumber(appealToHeadOfRegion.referenceNumber)
+				.clickViewStatusButton()
+				.verifyStatus(Constants.Status.SUCCESS_STATUS10);
 	}
 	//</editor-fold>
 }

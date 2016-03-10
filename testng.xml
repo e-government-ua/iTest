@@ -61,4 +61,14 @@
 			<class name="autoTests.TestRunner"/>
 		</classes>
 	</test>
+	<test name="TestService" enabled="true" preserve-order="true">
+		<groups>
+			<run>
+				<include name="TestService"/>
+			</run>
+		</groups>
+		<classes>
+			<class name="autoTests.TestRunner"/>
+		</classes>
+	</test>
 </suite>

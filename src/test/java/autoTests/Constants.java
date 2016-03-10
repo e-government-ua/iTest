@@ -27,6 +27,7 @@ public class Constants {
 
     public static class Services {
 
+
         // Міліція та ДАІ
         public static class MVD {
             public static final String CRIMINAL_RECORD = "Надання довідки про притягнення до кримінальної відповідальності, відсутність (наявність) судимості або обмежень, передбачених кримінально-процесуальним законодавством України";
@@ -123,6 +124,7 @@ public class Constants {
         public static final String SUCCESS_STATUS7 = "Заявка подана - Взяти в роботу";
         public static final String SUCCESS_STATUS8 = "Заявка подана";
         public static final String SUCCESS_STATUS9 = "Заявка подана - перевірка документів";
+        public static final String SUCCESS_STATUS10 = "Заявка подана - Перевірка даних";
     }
 
     public static class AlertMessages {

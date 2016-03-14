@@ -191,7 +191,6 @@ public class PregnancyPage extends BaseServicePage {
         referenceNumber = super.saveReferenceNumber();
         return referenceNumber;
     }
-
     public PregnancyPage clickLinkResort() {
         resortLink.click();
         return this;

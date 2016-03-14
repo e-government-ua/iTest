@@ -243,11 +243,11 @@ public class TestRunner extends SetupAndTeardown
 	}
 
 	@Test(enabled = true, groups = {"dashboard", "admins"}, priority = 1)
-	public void G1() throws Exception {
+	public void H1() throws Exception {
 		CustomMethods.addTestNameToTheReport(
 				"Вход на страницу Dashboards",
 				Thread.currentThread().getStackTrace()[1].toString()
 		);
-		testSuite.G1_EnterDashboard(driver);
+		testSuite.H1_EnterDashboard(driver);
 	}
 }

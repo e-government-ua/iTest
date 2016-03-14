@@ -1036,27 +1036,14 @@ public class TestSuite extends CustomMethods {
 				.clickConfirmButton()
 				.verifyServiceSuccessCreated()
 		        .clickLinkResort();
-
 		statusPage.verifyStatus(Constants.Status.SUCCESS_STATUS9);
+		bankIdPage.logOut();
 
 /*		customMethods.openStatusesPage(driver);
 		statusPage.enterReferenceNumber(PregnancyPage.referenceNumber)
 				.clickViewStatusButton()
 				.verifyStatus(Constants.Status.SUCCESS_STATUS9);
 		bankIdPage.logOut();*/
-	}
-	//</editor-fold>
-
-	//<editor-fold desc="G1 - Вход в дашборд">
-	public void G1_EnterDashboard(WebDriver driver) throws Exception {
-		driver.get(Constants.Dashboard.URL_DASHBOARD);
-		EnterDashBoardPage dashBoardPage = new EnterDashBoardPage(driver);
-
-		addStepToTheReport("1. Перейдем на входа в дашборд");
-		dashBoardPage.enterLogin(Constants.Dashboard.LOGIN_PASSWORD_DASHBOARD);
-		dashBoardPage.enterPassword(Constants.Dashboard.LOGIN_PASSWORD_DASHBOARD);
-		dashBoardPage.clickButtonEnter();
-
 	}
 	//</editor-fold>
 
@@ -1327,6 +1314,19 @@ public class TestSuite extends CustomMethods {
 		statusPage.enterReferenceNumber(TestZPCnapMailerPage.referenceNumber)
 				.clickViewStatusButton()
 				.verifyStatus(Constants.Status.SUCCESS_STATUS2);
+	}
+	//</editor-fold>
+
+	//<editor-fold desc="H1 - Вход в дашборд">
+	public void H1_EnterDashboard(WebDriver driver) throws Exception {
+		driver.get(Constants.Dashboard.URL_DASHBOARD);
+		EnterDashBoardPage dashBoardPage = new EnterDashBoardPage(driver);
+
+		addStepToTheReport("1. Перейдем на входа в дашборд");
+		dashBoardPage.enterLogin(Constants.Dashboard.LOGIN_PASSWORD_DASHBOARD);
+		dashBoardPage.enterPassword(Constants.Dashboard.LOGIN_PASSWORD_DASHBOARD);
+		dashBoardPage.clickButtonEnter();
+
 	}
 	//</editor-fold>
 }

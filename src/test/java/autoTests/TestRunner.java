@@ -1,6 +1,5 @@
 package autoTests;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TestRunner extends SetupAndTeardown
@@ -243,75 +242,12 @@ public class TestRunner extends SetupAndTeardown
 		testSuite.F1_Pregnancy(driver);
 	}
 
-	@Test(enabled = true, groups = {"TestService"}, priority = 1)
+	@Test(enabled = true, groups = {"dashboard", "admins"}, priority = 1)
 	public void G1() throws Exception {
 		CustomMethods.addTestNameToTheReport(
-				"---",
+				"Вход на страницу Dashboards",
 				Thread.currentThread().getStackTrace()[1].toString()
 		);
-		testSuite.G1_TestService(driver);
-	}
-
-	@Test(enabled = true, groups = {"TestService"}, priority = 2)
-	public void G2() throws Exception {
-		CustomMethods.addTestNameToTheReport(
-				"---",
-				Thread.currentThread().getStackTrace()[1].toString()
-		);
-		testSuite.G2_TestService(driver);
-	}
-
-	@Test(enabled = true, groups = {"TestService"}, priority = 2)
-	public void G3() throws Exception {
-		CustomMethods.addTestNameToTheReport(
-				"---",
-				Thread.currentThread().getStackTrace()[1].toString()
-		);
-		testSuite.G3_TestService(driver);
-	}
-
-	@Test(enabled = true, groups = {"TestService"}, priority = 2)
-	public void G4() throws Exception {
-		CustomMethods.addTestNameToTheReport(
-				"---",
-				Thread.currentThread().getStackTrace()[1].toString()
-		);
-		testSuite.G4_TestService(driver);
-	}
-
-	@Test(enabled = true, groups = {"TestService"}, priority = 2)
-	public void G5() throws Exception {
-		CustomMethods.addTestNameToTheReport(
-				"---",
-				Thread.currentThread().getStackTrace()[1].toString()
-		);
-		testSuite.G5_TestService(driver);
-	}
-
-	@Test(enabled = true, groups = {"TestService"}, priority = 2)
-	public void G6() throws Exception {
-		CustomMethods.addTestNameToTheReport(
-				"---",
-				Thread.currentThread().getStackTrace()[1].toString()
-		);
-		testSuite.G6_TestService(driver);
-	}
-
-	@Test(enabled = true, groups = {"TestService"}, priority = 2)
-	public void G7() throws Exception {
-		CustomMethods.addTestNameToTheReport(
-				"---",
-				Thread.currentThread().getStackTrace()[1].toString()
-		);
-		testSuite.G7_TestService(driver);
-	}
-
-	@Test(enabled = true, groups = {"TestService"}, priority = 2)
-	public void G8() throws Exception {
-		CustomMethods.addTestNameToTheReport(
-				"---",
-				Thread.currentThread().getStackTrace()[1].toString()
-		);
-		testSuite.G8_TestService(driver);
+		testSuite.G1_EnterDashboard(driver);
 	}
 }

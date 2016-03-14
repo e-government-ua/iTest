@@ -1,8 +1,6 @@
 package autoTests;
 
-/**
- * Created by Slame on 24.02.16.
- */
+
 public class Constants {
     public static class Areas {
 
@@ -101,6 +99,7 @@ public class Constants {
         public static final String TEST_PRINT_FORM = "/service/673/general";
         public static final String TEST_QUEUE_CANCEL = "/service/756/general";
         public static final String TEST_ZP_CNAP_MAILER = "/service/1426/general";
+        public static final String TEST_DASHBOARD_LOGIN_IN = "https://test-version.region.igov.org.ua/";
     }
 
     //--------------------- Сервера для запуска тестов  ---------------------------//
@@ -109,10 +108,16 @@ public class Constants {
         public static final String TEST_SERVER = "https://test.igov.org.ua/";
         // https://test-version.igov.org.ua/   - для регреса
         // https://test.igov.org.ua/   - тестовый
-
-
     }
+
+    //------------------- Тестовые данные для входа Дашбоард  ------------------//
+    public static class Dashboard{
+        public static final String URL_DASHBOARD = "https://test-version.region.igov.org.ua/";
+        public static final String LOGIN_PASSWORD_DASHBOARD = "kermit";
+    }
+
     public static class Status {
+
         public static final String SUCCESS_STATUS = "Заявка подана - рассмотрение и загрузка" ;
         public static final String SUCCESS_STATUS1 = "Заявка подана - обробка заявки";
         public static final String SUCCESS_STATUS2 = "Заявка подана - Формування додатків документів для відправлення держ.службовцям на email";
@@ -124,6 +129,7 @@ public class Constants {
         public static final String SUCCESS_STATUS8 = "Заявка подана";
         public static final String SUCCESS_STATUS9 = "Заявка подана - перевірка документів";
     }
+
 
     public static class AlertMessages {
         public static class SuccessfulMessages {

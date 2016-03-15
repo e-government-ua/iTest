@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 /**
  * Created by Slame on 24.02.16.
  */
-public class StatisticTab {
+public class StatisticTab  {
     WebDriver driver;
     ConfigurationVariables configVariables = ConfigurationVariables.getInstance();
     // Variables

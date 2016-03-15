@@ -1038,12 +1038,6 @@ public class TestSuite extends CustomMethods {
 		        .clickLinkResort();
 		statusPage.verifyStatus(Constants.Status.SUCCESS_STATUS9);
 		bankIdPage.logOut();
-
-/*		customMethods.openStatusesPage(driver);
-		statusPage.enterReferenceNumber(PregnancyPage.referenceNumber)
-				.clickViewStatusButton()
-				.verifyStatus(Constants.Status.SUCCESS_STATUS9);
-		bankIdPage.logOut();*/
 	}
 	//</editor-fold>
 
@@ -1321,11 +1315,13 @@ public class TestSuite extends CustomMethods {
 	public void H1_EnterDashboard(WebDriver driver) throws Exception {
 		driver.get(Constants.Dashboard.URL_DASHBOARD);
 		EnterDashBoardPage dashBoardPage = new EnterDashBoardPage(driver);
+		TasksPage tasksPage = new TasksPage(driver);
 
 		addStepToTheReport("1. Перейдем на входа в дашборд");
 		dashBoardPage.enterLogin(Constants.Dashboard.LOGIN_PASSWORD_DASHBOARD);
 		dashBoardPage.enterPassword(Constants.Dashboard.LOGIN_PASSWORD_DASHBOARD);
 		dashBoardPage.clickButtonEnter();
+		tasksPage.verifyListTabs();
 
 	}
 	//</editor-fold>

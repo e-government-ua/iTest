@@ -162,11 +162,6 @@ public class PregnancyPage extends BaseServicePage {
         return this;
     }
 
-    /*public boolean checkAcceptPregnancy(String text) {
-        if (this.infoSuccess.getTagName().contains((CharSequence) text)) {
-            return true;
-        } else return false;
-    }*/
 
     public PregnancyPage verifyServiceSuccessCreated() {
         String text = successText.getText().substring(26,successText.getText().length());
@@ -182,6 +177,7 @@ public class PregnancyPage extends BaseServicePage {
         super.clickConfirmButton();
         return this;
     }
+
 
 
 //=================методы по работе с номером заявки=======================//

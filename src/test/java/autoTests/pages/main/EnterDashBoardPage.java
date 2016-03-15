@@ -2,21 +2,23 @@ package autoTests.pages.main;
 
 import autoTests.ConfigurationVariables;
 import autoTests.Constants;
-import org.openqa.selenium.Keys;
+import autoTests.CustomMethods;
+import autoTests.pages.service.BaseServicePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class EnterDashBoardPage {
+public class EnterDashBoardPage extends BaseServicePage {
     WebDriver driver;
     ConfigurationVariables configVariables = ConfigurationVariables.getInstance();
+    CustomMethods customMethods = new CustomMethods();
     // Variables
 
     @FindBy(xpath = "//input[@name='login']")
     public WebElement field_login;
 
-    @FindBy(name ="//input[@name='password']")
+    @FindBy(xpath ="//input[@type='password']")
     public WebElement field_password;
 
     @FindBy(xpath ="//button[@type='submit']")
@@ -32,16 +34,14 @@ public class EnterDashBoardPage {
         driver.navigate().to(Constants.Dashboard.URL_DASHBOARD);
     }
 
-    public EnterDashBoardPage enterLogin(String login) {
+    public void enterLogin(String login) throws Exception {
+        customMethods.waitForElementPresent(driver,field_login,configVariables.implicitTimeWait,500);
         field_login.sendKeys(login);
-        field_login.sendKeys(Keys.TAB);
-        return this;
     }
 
-    public EnterDashBoardPage enterPassword(String password) {
+    public void enterPassword(String password) {
         field_password.sendKeys(password);
-        return this;
-    }
+     }
 
     public EnterDashBoardPage clickButtonEnter(){
         button_enter.click();

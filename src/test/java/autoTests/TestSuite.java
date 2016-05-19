@@ -160,6 +160,7 @@ public class TestSuite extends CustomMethods {
 		customMethods.openDocumentsPage(driver);
 		assertTrue(documentsPage.isLoginFormDisplayed());
 		bankIdPage.loginByPrivatBankBankID();
+		documentsPage.infoBlockDocument.getText();
 		assertEquals(documentsPage.infoBlockDocument.getText(), "Тут знаходяться всі Ваші документи, які були раніше " +
 				"завантажені авторизованими організаціями. Ви можете їх скачати або надати доступ третім особам " +
 				"(в тому числі іншим державним або приватним організаціям).");
@@ -170,7 +171,7 @@ public class TestSuite extends CustomMethods {
 		customMethods.openDocumentsPage(driver);
 		assertEquals(documentsPage.loginForm.getText(), "Крок 1. Увійдіть в систему через BankID\n" +
 				"Сертифікат електронно-\n" +
-				"цифрового підпису");
+				"цифрового підпису\n" + "IDcard");
 		documentsPage.searchDocumentWithCode(accessCode);
 		documentsPage.isDocumentFound();
 

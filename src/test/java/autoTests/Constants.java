@@ -65,6 +65,7 @@ public class Constants {
         public static class PersonalInfo {
             public static final String PHONE = "380932030405";
             public static final String FIO_UA = "Володимир Володимирович Білявцев";
+            public static final String FIO_UA_DUBILET = "Дмитро Олександрович Дубілет";
             public static final String FIO_RUS = "Дубилет Дмитрий Александрович";
             public static final String E_MAIL = "vidokgulich@gmail.com";
             public static final String BIRTH_DAY = "01.01.1970";

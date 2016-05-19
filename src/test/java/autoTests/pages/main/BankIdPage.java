@@ -2,6 +2,7 @@ package autoTests.pages.main;
 
 import autoTests.ConfigurationVariables;
 import autoTests.Constants;
+import autoTests.CustomMethods;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,7 +17,7 @@ import static org.testng.Assert.assertEquals;
 /**
  * Created by Slame on 24.02.16.
  */
-public class BankIdPage {
+public class BankIdPage extends CustomMethods {
     WebDriver driver;
     ConfigurationVariables configVariables = ConfigurationVariables.getInstance();
     // Variables
@@ -48,7 +49,7 @@ public class BankIdPage {
     @FindBy(id = "signInButton")
     public WebElement signIn;         //  sign in button after entering ОТР
 
-    @FindBy(xpath = "//span[contains(.,'Володимир Володимирович Білявцев')]")
+    @FindBy(xpath = "//span[@class='pull-right ng-binding']")
     public WebElement fio;            //  full name of client after login
 
     @FindBy(xpath = "//span[contains(.,'Вийти')]")
@@ -68,9 +69,9 @@ public class BankIdPage {
     }
 
     // Method for FIO verification after login
-    public void verifyFIO() {
-        new WebDriverWait(driver, 5).until(ExpectedConditions.visibilityOf(fio));
-        assertEquals(fio.getText(), Constants.TestData.PersonalInfo.FIO_UA);
+    public void verifyFIO() throws Exception {
+        waitForElementPresent(driver,fio,configVariables.implicitTimeWait,1);
+        assertEquals(fio.getText(), Constants.TestData.PersonalInfo.FIO_UA_DUBILET);
     }
 
     // Method for entering ОТР
@@ -103,7 +104,7 @@ public class BankIdPage {
     }
 
     // Method for authorization through PrivatBank
-    public void loginByPrivatBankBankID() {
+    public void loginByPrivatBankBankID() throws Exception {
         clickOnBankIdButton();
         clickOnPrivatBank();
         typeLoginAndPassword();
